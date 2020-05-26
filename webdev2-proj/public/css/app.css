@@ -62,10 +62,12 @@ nav {
   display: flex;
   align-items: center;
   width: 100%;
+  position: relative;
+  z-index: 70;
   overflow: hidden;
   min-height: 60px;
   background-color: #203A46;
-  font-family: "fonts/Cinzel-Bold.otf";
+  font-family: Cinzel;
   box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.85);
 }
 
@@ -86,42 +88,6 @@ nav .logo a {
 
 nav a {
   font-family: Cinzel;
-}
-
-footer {
-  background: url("/images/parchment.jpg");
-  background-repeat: repeat;
-  font-family: Museo;
-  color: black;
-  font-size: 16px;
-  position: relative;
-  width: 100%;
-}
-
-footer .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-footer img {
-  width: calc(2000px / 10);
-}
-
-footer a {
-  color: black;
-}
-
-footer::before {
-  content: " ";
-  display: block;
-  left: 0;
-  top: -2px;
-  position: absolute;
-  background: url("/images/thinborder.png");
-  width: 100%;
-  height: 5px;
 }
 
 .attention {
@@ -179,7 +145,8 @@ footer::before {
   z-index: 1;
 }
 
-.splash .left {
+.splash .left,
+.splash .right {
   align-items: center;
   width: 100%;
   position: absolute;
@@ -188,7 +155,131 @@ footer::before {
   transform: translate(0%, -50%);
 }
 
-.splash .left .text {
-  width: 50%;
+.splash .left .text,
+.splash .right .text {
+  width: 45%;
+  max-width: 650px;
+}
+
+.splash .left .text h2,
+.splash .right .text h2 {
+  font-family: Cinzel;
+  font-size: 48px;
+}
+
+.splash .left .text p,
+.splash .right .text p {
+  font-family: Museo;
+  font-size: 16px;
+}
+
+.splash::after {
+  content: " ";
+  display: block;
+  left: 0;
+  bottom: 0px;
+  position: absolute;
+  background: url("/images/thinborder.png");
+  width: 100%;
+  height: 5px;
+  z-index: 50;
+}
+
+.right .text {
+  text-align: right;
+  float: right;
+}
+
+footer {
+  padding: 32px 0;
+  box-shadow: inset 0px 10px 15px -5px rgba(0, 0, 0, 0.75);
+  background: url("/images/parchment.jpg");
+  background-repeat: repeat;
+  font-family: Museo;
+  color: black;
+  font-size: 16px;
+  position: relative;
+  width: 100%;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer img {
+  width: calc(2000px / 10);
+}
+
+footer a {
+  color: black;
+}
+
+footer::before {
+  content: " ";
+  display: block;
+  left: 0;
+  top: -2px;
+  position: absolute;
+  background: url("/images/thinborder.png");
+  width: 100%;
+  height: 5px;
+}
+
+.newsletter {
+  color: #ECEDEE;
+  font-family: Museo;
+  display: flex;
+  align-items: center;
+  background: url("/images/cracks.png") repeat-x center top -9.1875rem, url("/images/cracks.png") repeat-x center bottom -9.1875rem, #101D23;
+}
+
+.newsletter form {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  justify-content: center;
+  margin: 128px auto;
+}
+
+.newsletter form input {
+  width: 65%;
+}
+
+.newsletter form input[type=submit] {
+  width: 35%;
+}
+
+label {
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+input {
+  float: left;
+  box-sizing: border-box;
+  color: #ECEDEE;
+  font-family: Museo;
+  padding: 5px;
+  background: #091013;
+  box-shadow: inset 5px 5px 15px -5px rgba(0, 0, 0, 0.75);
+  border: 0.0625rem solid rgba(16, 29, 35, 0);
+}
+
+input[type=submit] {
+  box-shadow: unset;
+  width: 35%;
+  font-size: 24px;
+  padding: 0 32px;
+  background: linear-gradient(-180deg, #e6b226 0%, #D87B19 100%);
+  font-family: Cinzel;
+  color: #101D23;
+  float: left;
+  border: 3px solid #f0d079;
+  border-right: 3px solid #9f4000;
+  border-bottom: 3px solid #9f4000;
+  cursor: pointer;
 }
 

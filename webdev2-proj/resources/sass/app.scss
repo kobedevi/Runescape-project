@@ -13,7 +13,8 @@ $white: #ECEDEE;
     src: url('/fonts/MuseoSans_500.otf');
 }
 
-$script: "fonts/Cinzel-Bold.otf";
+$text: Museo;
+$title: Cinzel;
 
 .container {
     margin: 0 auto;
@@ -66,10 +67,12 @@ nav {
     display: flex;
     align-items: center;
     width: 100%;
+    position: relative;
+    z-index: 70;
     overflow: hidden;
     min-height: 60px;
     background-color: $lighter; 
-    font-family: $script;
+    font-family: $title;
     box-shadow: 0 0.3125rem 0.625rem 0 rgba(0,0,0,0.85);
     .logo{
         position: absolute;
@@ -85,41 +88,7 @@ nav {
         }
     }
     a{
-        font-family: Cinzel;
-    }
-}
-
-
-footer {
-    background: url('/images/parchment.jpg');
-    background-repeat: repeat;
-    font-family: Museo;
-    color: black;
-    font-size: 16px;
-    position: relative;
-    width: 100%;
-    .container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    img{
-        width: calc(2000px / 10);
-    }
-    a {
-        color: black;
-    }
-    &::before{
-        content: ' ';
-        display: block;
-        left: 0;
-        top: -2px;
-        position: absolute;
-        background: url('/images/thinborder.png');
-        width: 100%;
-        height: 5px;
+        font-family: $title;
     }
 }
 
@@ -170,7 +139,7 @@ footer {
         width: 100%;
         z-index: 1;
     }
-    .left {
+    .left, .right {
         align-items: center;
         width: 100%;
         position: absolute;
@@ -178,7 +147,120 @@ footer {
         z-index: 500;
         transform: translate(-0%, -50%);
         .text{
-            width: 50%;
+            width: 45%;
+            max-width:650px;
+            h2{
+                font-family: $title;
+                font-size: 48px;
+            }
+            p{
+                font-family: $text;
+                font-size: 16px;
+            }
         }
+    }
+    &::after {
+        content: ' ';
+        display: block;
+        left: 0;
+        bottom: 0px;
+        position: absolute;
+        background: url('/images/thinborder.png');
+        width: 100%;
+        height: 5px;
+        z-index: 50;
+    }
+}
+
+.right {
+    .text {
+        text-align: right;
+        float: right;
+    }
+}
+
+footer {
+    padding: 32px 0;
+    box-shadow: inset 0px 10px 15px -5px rgba(0,0,0,0.75);
+    background: url('/images/parchment.jpg');
+    background-repeat: repeat;
+    font-family: $text;
+    color: black;
+    font-size: 16px;
+    position: relative;
+    width: 100%;
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    img{
+        width: calc(2000px / 10);
+    }
+    a {
+        color: black;
+    }
+    &::before{
+        content: ' ';
+        display: block;
+        left: 0;
+        top: -2px;
+        position: absolute;
+        background: url('/images/thinborder.png');
+        width: 100%;
+        height: 5px;
+    }
+}
+
+.newsletter{
+    color: $white;
+    font-family: $text;
+    display: flex;
+    align-items: center;
+    background: url("/images/cracks.png") repeat-x center top -9.1875rem,url("/images/cracks.png") repeat-x center bottom -9.1875rem, $dark;
+    form{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 800px;
+        justify-content: center;
+        margin: 128px auto;
+        input{
+            width: 65%;
+            &[type=submit]{
+                width: 35%;
+            }
+        }
+    }
+}
+
+// input
+label{
+    width: 100%;
+    margin-bottom: 6px;
+}
+input{
+    float: left;
+    box-sizing: border-box;
+    color: $white;
+    font-family: $text;
+    padding: 5px;
+    background: $black;
+    box-shadow: inset 5px 5px 15px -5px rgba(0,0,0,0.75);
+    border: .0625rem solid rgba(16,29,35,0);
+    &[type=submit]{
+        box-shadow: unset;
+        width: 35%;
+        font-size: 24px;
+        padding: 0 32px;
+        background: linear-gradient(-180deg, #e6b226 0%, #D87B19 100%);
+        font-family: $title;
+        color: $dark;
+        float: left;
+        border: 3px solid rgb(240, 208, 121);
+        border-right: 3px solid rgb(159, 64, 0);
+        border-bottom: 3px solid rgb(159, 64, 0);
+        cursor: pointer;
     }
 }
