@@ -21,12 +21,13 @@ $script: "fonts/Cinzel-Bold.otf";
     padding: 0 10px;
     width: 100%;
     max-width: 1650px;
+    overflow: hidden;
 }
 
 html,body{
     margin: 0;
     padding: 0;
-    width: 100vw;
+    width: 100%;
 }
 
 .toolbar{
@@ -96,6 +97,7 @@ footer {
     color: black;
     font-size: 16px;
     position: relative;
+    width: 100%;
     .container{
         display: flex;
         flex-direction: row;
@@ -121,14 +123,14 @@ footer {
     }
 }
 
-.attention, .splash {
+.attention{
     width: 100%;
     position: relative;
     img{
         width: 100%;
         object-fit: cover;
     }
-    div{
+    .title{
         position: absolute;
         bottom: 50px;
         text-align: center;
@@ -159,7 +161,24 @@ footer {
 }
 
 .splash {
-    &::after{
-        all:unset;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    img{
+        display: block;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+    .left {
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        z-index: 500;
+        transform: translate(-0%, -50%);
+        .text{
+            width: 50%;
+        }
     }
 }

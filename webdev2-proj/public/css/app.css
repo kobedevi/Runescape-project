@@ -14,13 +14,14 @@
   padding: 0 10px;
   width: 100%;
   max-width: 1650px;
+  overflow: hidden;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
 }
 
 .toolbar {
@@ -94,6 +95,7 @@ footer {
   color: black;
   font-size: 16px;
   position: relative;
+  width: 100%;
 }
 
 footer .container {
@@ -122,21 +124,18 @@ footer::before {
   height: 5px;
 }
 
-.attention,
-.splash {
+.attention {
   width: 100%;
   position: relative;
 }
 
-.attention img,
-.splash img {
+.attention img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.attention div,
-.splash div {
+.attention .title {
   position: absolute;
   bottom: 50px;
   text-align: center;
@@ -144,19 +143,16 @@ footer::before {
   z-index: 2;
 }
 
-.attention div h1,
-.splash div h1 {
+.attention .title h1 {
   font-size: 72px;
   color: #ECEDEE;
 }
 
-.attention div span,
-.splash div span {
+.attention .title span {
   color: #E1BB34;
 }
 
-.attention::after,
-.splash::after {
+.attention::after {
   content: " ";
   position: absolute;
   display: block;
@@ -170,7 +166,29 @@ footer::before {
   height: 50px;
 }
 
-.splash::after {
-  all: unset;
+.splash {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.splash img {
+  display: block;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.splash .left {
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  z-index: 500;
+  transform: translate(0%, -50%);
+}
+
+.splash .left .text {
+  width: 50%;
 }
 
