@@ -29,6 +29,10 @@ body {
   min-height: 20px;
 }
 
+.toolbar a {
+  font-family: Museo;
+}
+
 header ul {
   position: relative;
   display: flex;
