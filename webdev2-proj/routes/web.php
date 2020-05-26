@@ -14,4 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@getIndex')->name('home');
+Route::get('/homebanner/add', 'HomeBannerController@add')->name('addHomeBanner');
+Route::post('/homebanner/save', 'HomeBannerController@save')->name('saveHomeBanner');
+
 

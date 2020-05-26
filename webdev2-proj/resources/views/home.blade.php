@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+{{-- main banner! --}}
     <section class="attention">
         <img src="{{asset('/images/sec0.jpg')}}">
         <div class="title">
@@ -8,32 +9,31 @@
         </div>
     </section>
 
+    {{-- attraction banners --}}
+    @foreach ($banners as $banner)
     <section class="splash">
-        <img src="{{asset('/images/sec1.jpg')}}">
-        <div class="left">
+        <img src="{{ asset('/images/banners/'. $banner->image) }}">
+        @if($banner->position == 'l')
+            <div class="left">
+        @else
+            <div class="right">
+        @endif
             <div class="container">
+        
+            @if($banner->color == "d")
+                <div class="text dark">
+            @else
                 <div class="text">
-                    <h2>RUNESCAPE MOBILE EARLY ACCESS</h2>
-                    <p>RuneScape Mobile Early Access is now available for all RuneScape players on Android.</p>
-                    <p> Early Access is your chance to experience the magic of RuneScape on your mobile and with membership, grab the exclusive Mobile Founder's Pack. </p>
+            @endif
+                    <h2>{{ $banner->title_eng}}</h2>
+                    {!!$banner->text_eng!!}
                 </div>
             </div>
         </div>
     </section>
+    @endforeach
 
-    <section class="splash">
-        <img src="{{asset('/images/sec2.jpg')}}">
-        <div class="right">
-            <div class="container">
-                <div class="text">
-                    <h2>RUNESCAPE MOBILE EARLY ACCESS</h2>
-                    <p>RuneScape Mobile Early Access is now available for all RuneScape players on Android.</p>
-                    <p> Early Access is your chance to experience the magic of RuneScape on your mobile and with membership, grab the exclusive Mobile Founder's Pack. </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    {{-- newsletter sign up --}}
     <section class="newsletter">
         <div class="container">
             <form action="">

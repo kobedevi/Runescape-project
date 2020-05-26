@@ -189,6 +189,18 @@ nav a {
   z-index: 50;
 }
 
+.splash a {
+  color: #E1BB34;
+}
+
+.splash .dark h2 {
+  color: #E1BB34;
+}
+
+.splash .dark p {
+  color: #ECEDEE;
+}
+
 .right .text {
   text-align: right;
   float: right;

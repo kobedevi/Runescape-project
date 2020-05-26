@@ -173,6 +173,20 @@ nav {
         height: 5px;
         z-index: 50;
     }
+    a {
+        color: $yellow;
+    }
+}
+
+.splash{
+    .dark{
+        h2{
+            color: $yellow;
+        }
+        p{
+            color: $white
+        }
+    }
 }
 
 .right {
