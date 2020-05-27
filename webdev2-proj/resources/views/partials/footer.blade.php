@@ -4,7 +4,7 @@
         <p>
             {!! __('footer.footerText') !!}
         </p>
-        <a href="">Privacy policy</a>
+        <a href="">{!! __('footer.privacyPolicy') !!}</a>
     </div>
 </footer>
 </body>

@@ -8,6 +8,7 @@
     <title>Runescape mobile</title>
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/contact.css') }}">
+    <link rel="stylesheet" href="{{ mix('/css/news.css') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/branding/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/branding/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/branding/favicon-16x16.png') }}">
@@ -34,7 +35,7 @@
                 <ul>
                     <li class="logo" ><a href="{{ route('home', app()->getLocale()) }}">Runescape</a></li>
                     <li><a href="{{ route('home', app()->getLocale()) }}">{{ __('header.home') }}</a></li>
-                    <li><a href="">{{ __('header.news') }}</a></li>
+                    <li><a href="{{ route('news', app()->getLocale()) }}">{{ __('header.news') }}</a></li>
                     <li><a href="">{{ __('header.about') }}</a></li>
                 </ul>
             </div>

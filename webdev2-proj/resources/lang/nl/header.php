@@ -4,7 +4,7 @@
         'contact' => 'Contact',
         'login' => 'Inloggen',
         'home' => 'Home',
-        'news' => 'Nieuws blogs',
+        'news' => 'Nieuws',
         'about' => 'Over ons'
     ]
     

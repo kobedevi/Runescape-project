@@ -4,7 +4,7 @@
         'contact' => 'Contact',
         'login' => 'Login',
         'home' => 'Home',
-        'news' => 'News blogs',
+        'news' => 'News',
         'about' => 'About'
     ]
     
