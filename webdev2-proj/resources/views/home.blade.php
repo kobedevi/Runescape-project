@@ -41,7 +41,7 @@
                 @csrf
                 <label for="email">{{ __('home.newsletter') }}</label><br>
                 <input type="email" name="email" placeholder="{{ __('home.examplemail') }}">
-                <input class="test" type="submit" value="{{ __('home.signup') }}">
+                <input type="submit" value="{{ __('home.signup') }}">
             </form>
         </div>
     </section>

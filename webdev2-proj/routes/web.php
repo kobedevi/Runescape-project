@@ -18,6 +18,8 @@ Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function() {
     Route::get('/', 'HomeController@getIndex')->name('home');
+    Route::get('/contact', 'ContactController@getIndex')->name('contact');
+    Route::post('/contact', 'MailController@sendContact')->name('contact.save');
     Route::get('/homebanner/add', 'HomeBannerController@add')->name('addHomeBanner');
     Route::post('/homebanner/save', 'HomeBannerController@save')->name('saveHomeBanner');
 

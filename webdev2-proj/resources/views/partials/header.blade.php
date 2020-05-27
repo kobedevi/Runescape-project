@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Runescape mobile</title>
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('/css/contact.css') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/branding/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/branding/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/branding/favicon-16x16.png') }}">
@@ -23,7 +24,7 @@
                     <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), 'en') }}">EN</a></li>
                     <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), 'nl') }}">NL</a></li>  
                     <li><a href="">{{ __('header.donate') }}</a></li>
-                    <li><a href="">{{ __('header.contact') }}</a></li>
+                    <li><a href="{{ route('contact', app()->getLocale()) }}">{{ __('header.contact') }}</a></li>
                     <li><a class="cta" href="">{{ __('header.login') }}</a></li>
                 </ul>
             </div>
@@ -31,8 +32,8 @@
         <nav>
             <div class="container">
                 <ul>
-                    <li class="logo" ><a href="">Runescape</a></li>
-                    <li><a href="">{{ __('header.home') }}</a></li>
+                    <li class="logo" ><a href="{{ route('home', app()->getLocale()) }}">Runescape</a></li>
+                    <li><a href="{{ route('home', app()->getLocale()) }}">{{ __('header.home') }}</a></li>
                     <li><a href="">{{ __('header.news') }}</a></li>
                     <li><a href="">{{ __('header.about') }}</a></li>
                 </ul>

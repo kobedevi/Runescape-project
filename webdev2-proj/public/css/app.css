@@ -24,6 +24,14 @@ body {
   width: 100%;
 }
 
+body {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+}
+
 .toolbar {
   background-color: #101D23;
   min-height: 20px;
@@ -31,6 +39,10 @@ body {
 
 .toolbar a {
   font-family: Museo;
+}
+
+header {
+  width: 100%;
 }
 
 header ul {
@@ -101,6 +113,18 @@ nav .logo a {
 
 nav a {
   font-family: Cinzel;
+}
+
+.content {
+  background: #101D23;
+  flex: 1;
+  align-self: stretch;
+  justify-self: stretch;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .attention {
@@ -225,7 +249,81 @@ nav a {
   float: right;
 }
 
+.newsletter {
+  width: 100%;
+  color: #ECEDEE;
+  font-family: Museo;
+  display: flex;
+  align-items: center;
+  background: url("/images/cracks.png") repeat-x center top -9.1875rem, url("/images/cracks.png") repeat-x center bottom -9.1875rem, #101D23;
+}
+
+.newsletter form {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  justify-content: center;
+  margin: 128px auto;
+}
+
+.newsletter form input {
+  width: 65%;
+}
+
+.newsletter form input[type=submit] {
+  width: 35%;
+}
+
+label {
+  width: 100%;
+  color: #ECEDEE;
+  font-family: Museo;
+  margin-bottom: 6px;
+}
+
+input,
+textarea {
+  float: left;
+  box-sizing: border-box;
+  color: #ECEDEE;
+  font-family: Museo;
+  padding: 8px;
+  background: #091013;
+  box-shadow: inset 5px 5px 15px -5px rgba(0, 0, 0, 0.75);
+  border: 0.0625rem solid rgba(16, 29, 35, 0);
+}
+
+input[type=submit],
+textarea[type=submit] {
+  box-shadow: unset;
+  width: 35%;
+  font-size: 24px;
+  padding: 0 32px;
+  background: linear-gradient(-180deg, #e6b226 0%, #D87B19 100%);
+  font-family: Cinzel;
+  color: #101D23;
+  float: left;
+  border: 3px solid #f0d079;
+  border-right: 3px solid #9f4000;
+  border-bottom: 3px solid #9f4000;
+  cursor: pointer;
+}
+
+.required {
+  color: #E1BB34;
+  margin-left: 8px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 100px;
+  height: 200px;
+  max-height: 400px;
+}
+
 footer {
+  align-self: flex-end;
   padding: 32px 0;
   box-shadow: inset 0px 10px 15px -5px rgba(0, 0, 0, 0.75);
   background: url("/images/parchment.jpg");
@@ -234,6 +332,7 @@ footer {
   color: black;
   font-size: 16px;
   position: relative;
+  bottom: 0;
   width: 100%;
 }
 
@@ -261,60 +360,5 @@ footer::before {
   background: url("/images/thinborder.png");
   width: 100%;
   height: 5px;
-}
-
-.newsletter {
-  color: #ECEDEE;
-  font-family: Museo;
-  display: flex;
-  align-items: center;
-  background: url("/images/cracks.png") repeat-x center top -9.1875rem, url("/images/cracks.png") repeat-x center bottom -9.1875rem, #101D23;
-}
-
-.newsletter form {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 800px;
-  justify-content: center;
-  margin: 128px auto;
-}
-
-.newsletter form input {
-  width: 65%;
-}
-
-.newsletter form input[type=submit] {
-  width: 35%;
-}
-
-label {
-  width: 100%;
-  margin-bottom: 6px;
-}
-
-input {
-  float: left;
-  box-sizing: border-box;
-  color: #ECEDEE;
-  font-family: Museo;
-  padding: 5px;
-  background: #091013;
-  box-shadow: inset 5px 5px 15px -5px rgba(0, 0, 0, 0.75);
-  border: 0.0625rem solid rgba(16, 29, 35, 0);
-}
-
-input[type=submit] {
-  box-shadow: unset;
-  width: 35%;
-  font-size: 24px;
-  padding: 0 32px;
-  background: linear-gradient(-180deg, #e6b226 0%, #D87B19 100%);
-  font-family: Cinzel;
-  color: #101D23;
-  float: left;
-  border: 3px solid #f0d079;
-  border-right: 3px solid #9f4000;
-  border-bottom: 3px solid #9f4000;
-  cursor: pointer;
 }
 

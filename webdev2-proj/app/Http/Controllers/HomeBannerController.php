@@ -7,8 +7,8 @@ use App\HomeBanner;
 
 class HomeBannerController extends Controller
 {
-    public function add() {
-        return view("add");
+    public function add($lang) {
+        return view("admin.add");
     }
 
     public function save(Request $r) {
@@ -32,6 +32,6 @@ class HomeBannerController extends Controller
         }
 
         $homebanner->save();
-        return redirect()->route('home');
+        return redirect()->route('home', app()->getLocale());
     }
 }
