@@ -8,6 +8,9 @@ class HomeController extends Controller
 {
     public function getIndex() {
         $banners = HomeBanner::get();
-        return view('home', compact('banners'));
+        return view('home', [
+            'banners' => $banners
+        ]);
+
     }
 }

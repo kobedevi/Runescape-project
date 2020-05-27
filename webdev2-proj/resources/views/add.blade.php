@@ -7,7 +7,7 @@
     <title>add homeBanner</title>
 </head>
 <body>
-<form action="{{route('saveHomeBanner')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('saveHomeBanner', app()->getLocale())}}" method="POST" enctype="multipart/form-data">
         @csrf
         <p>Please select where your text should be:</p>
         <label for="left">Position: </label><br>
@@ -24,11 +24,11 @@
         <label for="dark">dark</label><br>
 
         <p>English:</p>
-        <label for="title_eng">English title</label>
-        <input type="text" name="title_eng">
-        <label for="text_eng">English text</label>
-        <p>Always use 	&lt;p&gt; tags for a new paragraph, close it with &lt;/p&gt;</p>
-        <textarea name="text_eng">Some text?</textarea>
+        <label for="title_en">English title</label>
+        <input type="text" name="title_en">
+        <label for="text_en">English text</label>
+        <p>Always use &lt;p&gt; tags for a new paragraph, close it with &lt;/p&gt;</p>
+        <textarea name="text_en">Some text?</textarea>
         
         <p>Dutch:</p>
         <label for="title_nl">Dutch title</label>

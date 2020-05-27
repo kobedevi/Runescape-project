@@ -17,8 +17,8 @@ class CreateHomebannersTable extends Migration
             $table->id();
             $table->string('position', 1);
             $table->string('color', 1);
-            $table->string('title_eng', 80);
-            $table->text('text_eng');
+            $table->string('title_en', 80);
+            $table->text('text_en');
             $table->string('title_nl', 80);
             $table->text('text_nl');
             $table->mediumText('image')->nullable();

@@ -64,6 +64,13 @@ header{
             }
         }
     }
+    .active {
+        color: $yellow;
+    }
+    .lang {
+        position: absolute;
+        left: 0;
+    }
 }
 
 nav {
@@ -101,6 +108,11 @@ nav {
     img{
         width: 100%;
         object-fit: cover;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
     }
     .title{
         position: absolute;
@@ -137,6 +149,11 @@ nav {
     position: relative;
     margin: auto;
     img{
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
         display: block;
         position: relative;
         width: 100%;

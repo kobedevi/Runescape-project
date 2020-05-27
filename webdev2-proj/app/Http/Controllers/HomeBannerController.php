@@ -16,8 +16,8 @@ class HomeBannerController extends Controller
 
         $homebanner->position = $r->input('position');
         $homebanner->color = $r->input('color');
-        $homebanner->title_eng = $r->input('title_eng');
-        $homebanner->text_eng = $r->input('text_eng');
+        $homebanner->title_en = $r->input('title_en');
+        $homebanner->text_en = $r->input('text_en');
         $homebanner->title_nl = $r->input('title_nl');
         $homebanner->text_nl = $r->input('text_nl');
 

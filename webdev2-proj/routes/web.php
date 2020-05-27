@@ -13,8 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@getIndex')->name('home');
-Route::get('/homebanner/add', 'HomeBannerController@add')->name('addHomeBanner');
-Route::post('/homebanner/save', 'HomeBannerController@save')->name('saveHomeBanner');
+// default is en
+Route::redirect('/', '/en');
 
+Route::group(['prefix' => '{language}'], function() {
+    Route::get('/', 'HomeController@getIndex')->name('home');
+    Route::get('/homebanner/add', 'HomeBannerController@add')->name('addHomeBanner');
+    Route::post('/homebanner/save', 'HomeBannerController@save')->name('saveHomeBanner');
+
+    // Auth::routes();
+});
 
