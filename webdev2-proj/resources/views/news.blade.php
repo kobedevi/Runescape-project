@@ -6,7 +6,7 @@
             <main>
 
                 @foreach ($blogs as $blog)
-                        <a href="">
+                        <a href="{{ route('news.detail', ['language' => App::getLocale(), 'news' => $blog->id ]) }}">
                         <section class="newsblock">
                             <img src="{{ asset('/images/news/'. $blog->image) }}">
                             <article>

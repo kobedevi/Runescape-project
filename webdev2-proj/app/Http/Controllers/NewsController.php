@@ -15,9 +15,10 @@ class NewsController extends Controller
         return view('news', compact('blogs', 'enmonths', 'nlmonths'));
     }
 
-    public function getDetail() {
-        // $blogs = News::);
+    public function getDetail($lang, $news) {
+        $post = News::where('id', $news)
+        ->firstOrFail();
 
-        return view('news', compact(''));
+        return view('newsDetail', compact('post'));
     }
 }
