@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\HomeBanner;
+use App;
 
 class HomeBannerController extends Controller
 {
@@ -17,9 +18,12 @@ class HomeBannerController extends Controller
         return view("admin.add.homebanner");
     }
 
-    public function edit($language, $banner) {
-        $thisbanner = HomeBanner::find($banner);
-        return view("admin.edit.homebanner", compact('banner'));
+    public function edit($language, $banner = null) {
+        $banner = HomeBanner::find($banner);
+        if($banner == null || !$banner){
+            return redirect()->route('homeBanner', app()->getLocale());
+        }
+        return view("admin.edit.homebanner", compact(['language', 'banner']));
     }
 
     public function save(Request $r) {
@@ -38,23 +42,23 @@ class HomeBannerController extends Controller
             $filename = time() . '.' . $extension;
             $file->move('images/banners/', $filename);
             $homebanner->image = $filename;
+        } elseif($r->id) {
         } else {
             return "not a valid image!";
         }
 
         if($r->id) {
-            dd($r->id);
-            // $update = HomeBanner::where('id', $r->id)->first();
-            // $update->update($homebanner);
+            $homebanner = $homebanner->toArray();
+            $update = HomeBanner::where('id', $r->id)->first();
+            $update->update($homebanner);   
         } else {
-            dd('geen id');
-            // $homebanner->save();
+            $homebanner->save();
         }
 
         return redirect()->route('homeBanner', app()->getLocale());
     }
 
-    public function destroy($banner) {
+    public function destroy($language, $banner) {
         HomeBanner::find($banner)->delete();
         return redirect()->route('homeBanner', app()->getLocale());
     }

@@ -25,6 +25,6 @@ class MailController extends Controller
                 $message->subject('contact form');
             }); 
         }
-        return redirect()->route('home', $lang);
+        return redirect()->route('start', $lang);
     }
 }
