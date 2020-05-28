@@ -3,7 +3,9 @@
 <div class="content">
     <div class="admin">
         @include('admin.partials.navigation')
-        @yield("content")
+        <div class="admincontainer">
+            @yield("content")
+        </div>
     </div>
 </div>
 

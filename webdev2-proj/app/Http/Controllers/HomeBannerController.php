@@ -7,8 +7,19 @@ use App\HomeBanner;
 
 class HomeBannerController extends Controller
 {
-    public function add($lang) {
-        return view("admin.add");
+
+    public function getIndex(){
+        $banners = HomeBanner::orderby('id')->get();
+        return view("admin.read.homebanner", compact('banners'));
+    }
+
+    public function add() {
+        return view("admin.add.homebanner");
+    }
+
+    public function edit($language, $banner) {
+        $thisbanner = HomeBanner::find($banner);
+        return view("admin.edit.homebanner", compact('banner'));
     }
 
     public function save(Request $r) {
@@ -31,7 +42,20 @@ class HomeBannerController extends Controller
             return "not a valid image!";
         }
 
-        $homebanner->save();
-        return redirect()->route('home', app()->getLocale());
+        if($r->id) {
+            dd($r->id);
+            // $update = HomeBanner::where('id', $r->id)->first();
+            // $update->update($homebanner);
+        } else {
+            dd('geen id');
+            // $homebanner->save();
+        }
+
+        return redirect()->route('homeBanner', app()->getLocale());
+    }
+
+    public function destroy($banner) {
+        HomeBanner::find($banner)->delete();
+        return redirect()->route('homeBanner', app()->getLocale());
     }
 }

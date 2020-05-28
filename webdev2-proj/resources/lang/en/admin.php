@@ -1,9 +1,10 @@
 <?php
 
     return [
-        'homebanner' => 'Homebanners',
+        'homebanner' => 'Home banners',
         'news' => 'News',
         'adminpanel' => 'Admin panel',
+        'addhomebanner' => 'Add home banner',
     ]
 
 ?>
