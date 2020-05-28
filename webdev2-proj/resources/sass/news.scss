@@ -46,6 +46,10 @@
             box-sizing: border-box;
             padding: 10px 0;
             img{
+                border: solid 1px #384043;
+                box-sizing: border-box;
+                background: $black;
+                padding: 2px;
                 width: 170px;
                 height: 88px;
                 object-fit: cover;
@@ -99,7 +103,7 @@
                 box-sizing: border-box;
                 bottom: 0;
                 border-top: 1px solid $lighter;
-                border-bottom: 1px solid black;
+                border-bottom: 1px solid $black;
             }
         }
     }
@@ -143,4 +147,80 @@
 .pagination {
     list-style: none;
     padding: 0;
+    z-index: -1;
+}
+
+.newsbanner{
+    position: relative;
+    align-self: start !important;
+    display: flex;
+    min-height: 300px;
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.backgroundbanner{
+    position: relative;
+    background: $dark;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+    
+.detail {
+    top:-250px;
+    position: relative;
+    z-index: 2;
+    main {
+        min-height: 400px;
+        article{
+            padding: 20px 10px;
+            .intro {
+                box-shadow: 0 0 10px 3px rgba(0,0,0,.7);
+                background: rgba(0,0,0,.7);
+                outline:1px solid #62686c;
+                border: 2px solid $black;
+                box-sizing: border-box;
+                padding: 10px;
+                color: $white;
+                font-family: $text;
+            }
+            font-family: $text;
+            color: $white;
+        }
+    }
+    h1{
+        position: relative;
+        top: 4px;
+        z-index: 5;
+        padding: 8px 20px 0 30px;
+        display: inline-block;
+        background: url('/images/content_repeat_y.jpg');
+        overflow: visible;
+        margin: 0;
+        a{
+            color: $yellow;
+        }
+        &::after {
+            content:' ';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            height: 100%;
+            width: 54px;
+            background: url('/images/background_title.png');
+            background-repeat: no-repeat;
+        }
+    }
+    h3{
+        color: $lightblue;
+        font-family: $title;
+        margin:0;
+        font-size: 36px;
+    }
 }

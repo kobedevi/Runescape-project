@@ -39,15 +39,20 @@
                     <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'page' => $page, 'news' => $post ]) }}">NL</a></li>  
                     <li><a href="">{{ __('header.donate') }}</a></li>
                     <li><a href="{{ route('contact', app()->getLocale()) }}">{{ __('header.contact') }}</a></li>
-                    <li><a class="cta" href="">{{ __('header.login') }}</a></li>
+                    @guest
+                        <li><a class="cta" href="">{{ __('header.login') }}</a></li>
+                    @endguest
+                    @auth
+                        <li><a class="cta" href="{{ route('login', app()->getLocale()) }}">{{ __('header.login') }}</a></li>
+                    @endauth
                 </ul>
             </div>
         </div>
         <nav>
             <div class="container">
                 <ul>
-                    <li class="logo" ><a href="{{ route('home', app()->getLocale()) }}">Runescape</a></li>
-                    <li><a href="{{ route('home', app()->getLocale()) }}">{{ __('header.home') }}</a></li>
+                    <li class="logo" ><a href="{{ route('start', app()->getLocale()) }}">Runescape</a></li>
+                    <li><a href="{{ route('start', app()->getLocale()) }}">{{ __('header.home') }}</a></li>
                     <li><a href="{{ route('news', app()->getLocale()) }}">{{ __('header.news') }}</a></li>
                     <li><a href="">{{ __('header.about') }}</a></li>
                 </ul>

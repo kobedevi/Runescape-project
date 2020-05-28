@@ -5,23 +5,17 @@ form.contact {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 form.contact div {
   width: 49%;
   margin-bottom: 32px;
 }
-
-form.contact div input,
-form.contact div textarea {
+form.contact div input, form.contact div textarea {
   width: 100%;
 }
-
 form.contact label {
   display: flex;
   margin-bottom: 8px;
 }
-
 form.contact input[type=submit] {
   margin-top: 32px;
 }
-

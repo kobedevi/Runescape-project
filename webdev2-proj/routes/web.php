@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function() {
-    Route::get('/', 'HomeController@getIndex')->name('home');
+    Route::get('/', 'StartController@getIndex')->name('start');
 
     Route::get('/contact', 'ContactController@getIndex')->name('contact');
     Route::post('/contact', 'MailController@sendContact')->name('contact.save');
@@ -26,7 +26,18 @@ Route::group(['prefix' => '{language}'], function() {
     Route::post('/homebanner/save', 'HomeBannerController@save')->name('saveHomeBanner');
 
     Route::get('/news', 'NewsController@getIndex')->name('news');
-    Route::get('/news/{news?}', 'NewsController@getDetail')->name('news.detail');
-    // Auth::routes();
+    Route::get('/news/{news?}', 'NewsController@getDetail')->name('news.detail');   
+   
+    
+    Route::group(['prefix' => 'dashboard'], function() {
+        Auth::routes(['verify' => true]);
+
+        Route::get('/', 'DashboardController@getIndex');
+        Route::get('/test', 'DashboardController@tester');
+        Route::get('/get-by-filter', 'classController@getByFilter');
+        Route::get('/get-by-search', 'classController@getBySearch');
+
+    });
+
 });
 

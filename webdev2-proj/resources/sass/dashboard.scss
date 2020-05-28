@@ -1,0 +1,51 @@
+//admin panel
+@import 'app';
+
+ul{
+    list-style: none;
+}
+
+.content{
+    background: $lighter;
+}
+
+.admin {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.sidenav{
+    background: $dark;
+    color: $white;
+    width: 250px;
+    box-shadow:0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.85) ;
+    ul{
+        padding: 0;
+        li{
+            padding: 10px;
+            background: $dark;
+            border-bottom: 2px solid $lighter;
+            box-sizing:border-box;
+        }
+        li:hover{
+            background: $lighter;
+        }
+        a{
+            color: white;
+            font-family: $text;
+            text-decoration: none;
+        }
+    }
+}
+
+.admincontainer{
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}

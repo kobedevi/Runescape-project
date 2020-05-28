@@ -2,12 +2,10 @@
   font-family: Cinzel;
   src: url("/fonts/Cinzel-Bold.otf");
 }
-
 @font-face {
   font-family: Museo;
   src: url("/fonts/MuseoSans_500.otf");
 }
-
 .container {
   margin: 0 auto;
   box-sizing: border-box;
@@ -17,8 +15,7 @@
   overflow: hidden;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -36,7 +33,6 @@ body {
   background-color: #101D23;
   min-height: 20px;
 }
-
 .toolbar a {
   font-family: Museo;
 }
@@ -44,7 +40,6 @@ body {
 header {
   width: 100%;
 }
-
 header ul {
   position: relative;
   display: flex;
@@ -55,29 +50,23 @@ header ul {
   min-height: 30px;
   justify-content: flex-end;
 }
-
 header ul li {
   list-style: none;
   margin-left: 32px;
 }
-
 header ul li a {
   color: #ECEDEE;
   text-decoration: none;
 }
-
 header ul li a.cta {
   color: #E1BB34;
 }
-
 header ul li:first-of-type {
   margin: 0;
 }
-
 header .active {
   color: #E1BB34;
 }
-
 header .lang {
   position: absolute;
   left: 0;
@@ -95,12 +84,10 @@ nav {
   font-family: Cinzel;
   box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.85);
 }
-
 nav .logo {
   position: absolute;
   left: 0;
 }
-
 nav .logo a {
   display: block;
   text-indent: 100%;
@@ -110,7 +97,6 @@ nav .logo a {
   width: 120px;
   height: 36px;
 }
-
 nav a {
   font-family: Cinzel;
 }
@@ -131,7 +117,6 @@ nav a {
   width: 100%;
   position: relative;
 }
-
 .attention img {
   width: 100%;
   -o-object-fit: cover;
@@ -142,7 +127,6 @@ nav a {
   -o-user-drag: none;
   user-drag: none;
 }
-
 .attention .title {
   position: absolute;
   bottom: 50px;
@@ -150,16 +134,13 @@ nav a {
   width: 100%;
   z-index: 2;
 }
-
 .attention .title h1 {
   font-size: 72px;
   color: #ECEDEE;
 }
-
 .attention .title span {
   color: #E1BB34;
 }
-
 .attention::after {
   content: " ";
   position: absolute;
@@ -179,7 +160,6 @@ nav a {
   position: relative;
   margin: auto;
 }
-
 .splash img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
@@ -191,9 +171,7 @@ nav a {
   width: 100%;
   z-index: 1;
 }
-
-.splash .left,
-.splash .right {
+.splash .left, .splash .right {
   align-items: center;
   width: 100%;
   position: absolute;
@@ -201,25 +179,18 @@ nav a {
   z-index: 500;
   transform: translate(0%, -50%);
 }
-
-.splash .left .text,
-.splash .right .text {
+.splash .left .text, .splash .right .text {
   width: 45%;
   max-width: 650px;
 }
-
-.splash .left .text h2,
-.splash .right .text h2 {
+.splash .left .text h2, .splash .right .text h2 {
   font-family: Cinzel;
   font-size: 48px;
 }
-
-.splash .left .text p,
-.splash .right .text p {
+.splash .left .text p, .splash .right .text p {
   font-family: Museo;
   font-size: 16px;
 }
-
 .splash::after {
   content: " ";
   display: block;
@@ -231,7 +202,6 @@ nav a {
   height: 5px;
   z-index: 50;
 }
-
 .splash a {
   color: #E1BB34;
 }
@@ -239,7 +209,6 @@ nav a {
 .splash .dark h2 {
   color: #E1BB34;
 }
-
 .splash .dark p {
   color: #ECEDEE;
 }
@@ -257,7 +226,6 @@ nav a {
   align-items: center;
   background: url("/images/cracks.png") repeat-x center top -9.1875rem, url("/images/cracks.png") repeat-x center bottom -9.1875rem, #101D23;
 }
-
 .newsletter form {
   display: flex;
   flex-wrap: wrap;
@@ -265,11 +233,9 @@ nav a {
   justify-content: center;
   margin: 128px auto;
 }
-
 .newsletter form input {
   width: 65%;
 }
-
 .newsletter form input[type=submit] {
   width: 35%;
 }
@@ -281,8 +247,7 @@ label {
   margin-bottom: 6px;
 }
 
-input,
-textarea {
+input, textarea {
   float: left;
   box-sizing: border-box;
   color: #ECEDEE;
@@ -292,9 +257,7 @@ textarea {
   box-shadow: inset 5px 5px 15px -5px rgba(0, 0, 0, 0.75);
   border: 0.0625rem solid rgba(16, 29, 35, 0);
 }
-
-input[type=submit],
-textarea[type=submit] {
+input[type=submit], textarea[type=submit] {
   box-shadow: unset;
   width: 35%;
   font-size: 24px;
@@ -335,22 +298,18 @@ footer {
   bottom: 0;
   width: 100%;
 }
-
 footer .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-
 footer img {
   width: calc(2000px / 10);
 }
-
 footer a {
   color: black;
 }
-
 footer::before {
   content: " ";
   display: block;
@@ -361,4 +320,3 @@ footer::before {
   width: 100%;
   height: 5px;
 }
-

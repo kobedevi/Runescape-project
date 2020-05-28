@@ -1,12 +1,17 @@
 @extends('layout')
 
 @section('content')
-        <div class="container news">
-            <h1>{{ __('news.title') }}</h1>
+    <div class="backgroundbanner">
+        <img class="newsbanner" src="{{ asset('images/news/'.$post->image) }}" alt="">
+        <div class="container news detail">
+            <h1><a href="{{ route('news', app()->getLocale()) }}">{{ __('news.title') }}</a></h1>
             <main>
-                <h3>{{ $post->{'title_'.App::getLocale()} }}</h3>
-                <h3>{{ $postid = $post->id }}</h3>
-                <h3>{{ $postid }}</h3>
+                <article>
+                    <h3>{{ $post->{'title_'.App::getLocale()} }}</h3>
+                    <p class="intro">{{ $post->{'intro_'.App::getLocale()} }}</p>
+                    <p class="text">{{ $post->{'text_'.App::getLocale()} }}</p>
+                </article>
             </main>
         </div>
+    </div>
 @endsection
