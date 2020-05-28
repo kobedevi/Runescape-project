@@ -1,6 +1,6 @@
 <div class="sidenav">
     <ul>
-        <a href=""><li>homebanners</li></a>
-        <a href=""><li>news</li></a>
+        <a href="{{route('addHomeBanner', app()->getLocale())}}"><li>{{ __('admin.homebanner') }}</li></a>
+        <a href="{{route('addHomeBanner', app()->getLocale())}}"><li>{{ __('admin.news') }}</li></a>
     </ul>
 </div>

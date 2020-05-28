@@ -5,6 +5,12 @@ ul{
     list-style: none;
 }
 
+.container{
+    margin: 0;
+    width: 100%;
+    max-width: none;
+}
+
 .content{
     background: $lighter;
 }
@@ -48,4 +54,10 @@ ul{
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
+    box-sizing: border-box;
+    padding: 10px 40px 0 40px;
+    h1{
+        color: $yellow;
+        font-family: $title;
+    }
 }

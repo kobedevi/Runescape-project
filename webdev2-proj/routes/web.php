@@ -22,9 +22,6 @@ Route::group(['prefix' => '{language}'], function() {
     Route::get('/contact', 'ContactController@getIndex')->name('contact');
     Route::post('/contact', 'MailController@sendContact')->name('contact.save');
 
-    Route::get('/homebanner/add', 'HomeBannerController@add')->name('addHomeBanner');
-    Route::post('/homebanner/save', 'HomeBannerController@save')->name('saveHomeBanner');
-
     Route::get('/news', 'NewsController@getIndex')->name('news');
     Route::get('/news/{news?}', 'NewsController@getDetail')->name('news.detail');   
    
@@ -32,12 +29,9 @@ Route::group(['prefix' => '{language}'], function() {
     Route::group(['prefix' => 'dashboard'], function() {
         Auth::routes(['verify' => true]);
 
-        Route::get('/', 'DashboardController@getIndex');
-        Route::get('/test', 'DashboardController@tester');
-        Route::get('/get-by-filter', 'classController@getByFilter');
-        Route::get('/get-by-search', 'classController@getBySearch');
-
+        Route::get('/', 'DashboardController@getIndex')->name('admin');
+        Route::get('/homebanner/add', 'HomeBannerController@add')->name('addHomeBanner');
+        Route::post('/homebanner/save', 'HomeBannerController@save')->name('saveHomeBanner');
     });
 
 });
-

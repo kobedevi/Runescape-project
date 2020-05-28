@@ -40,10 +40,10 @@
                     <li><a href="">{{ __('header.donate') }}</a></li>
                     <li><a href="{{ route('contact', app()->getLocale()) }}">{{ __('header.contact') }}</a></li>
                     @guest
-                        <li><a class="cta" href="">{{ __('header.login') }}</a></li>
+                        <li><a class="cta" href="{{ route('admin', app()->getLocale()) }}">{{ __('header.login') }}</a></li>
                     @endguest
                     @auth
-                        <li><a class="cta" href="{{ route('login', app()->getLocale()) }}">{{ __('header.login') }}</a></li>
+                        <li><a class="cta" href="{{ route('admin', app()->getLocale()) }}">{{ __('header.admin') }}</a></li>
                     @endauth
                 </ul>
             </div>

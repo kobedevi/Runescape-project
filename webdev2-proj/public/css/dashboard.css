@@ -325,6 +325,12 @@ ul {
   list-style: none;
 }
 
+.container {
+  margin: 0;
+  width: 100%;
+  max-width: none;
+}
+
 .content {
   background: #203A46;
 }
@@ -368,4 +374,10 @@ ul {
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
+  box-sizing: border-box;
+  padding: 10px 40px 0 40px;
+}
+.admincontainer h1 {
+  color: #E1BB34;
+  font-family: Cinzel;
 }

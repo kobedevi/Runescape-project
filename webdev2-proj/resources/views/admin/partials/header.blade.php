@@ -21,6 +21,21 @@
     <header>
         <div class="toolbar">
             <div class="container">
+                <ul>
+                    <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en']) }}">EN</a></li>  
+                    <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl']) }}">NL</a></li>  
+                    {{-- <li><a class="cta" href="{{ route('logout', app()->getLocale()) }}"  >{{ __('header.logout') }}</a></li> --}}
+                    {{-- <li><a class="cta" href="#" onclick="location.replace('/logout')" >{{ __('header.logout') }}</a></li> --}}
+                    <li role="menuitem">
+                        <a style='' href="{{ route('logout', app()->getLocale()) }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                            {{ __('header.logout') }}
+                        </a>
+                    </li>
+                    <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </ul>
             </div>
         </div>
         <nav>
