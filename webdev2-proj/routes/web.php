@@ -17,14 +17,22 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function() {
+
+    $language = App::getLocale();
+    if (! in_array($language, ['en', 'nl'])) {
+        abort(400);
+    }
+
     Route::get('/', 'StartController@getIndex')->name('start');
 
     Route::get('/contact', 'ContactController@getIndex')->name('contact');
     Route::post('/contact', 'MailController@sendContact')->name('contact.save');
 
     Route::get('/news', 'NewsController@getIndex')->name('news');
-    Route::get('/news/{news?}', 'NewsController@getDetail')->name('news.detail');   
-   
+    Route::get('/news/{id}', 'NewsController@getDetail')->name('news.detail');   
+    
+    Route::get('/privacy-policy', 'NewsController@getIndex')->name('news');
+
     
     Route::group(['prefix' => 'dashboard'], function() {
         Auth::routes(['verify' => true]);
@@ -34,10 +42,14 @@ Route::group(['prefix' => '{language}'], function() {
         Route::get('/homebanner', 'HomeBannerController@getIndex')->name('homeBanner');
         Route::get('/homebanner/add', 'HomeBannerController@add')->name('homeBanner.add');
         Route::post('/homebanner/save', 'HomeBannerController@save')->name('saveHomeBanner');
-        Route::get('/homebanner/edit/{banner?}', 'HomeBannerController@edit')->name('homeBanner.edit');
-        Route::get('/homebanner/destroy/{banner?}', 'HomeBannerController@destroy')->name('homeBanner.destroy');
-
-        Route::post('/homebanner/save', 'HomeBannerController@save')->name('saveHomeBanner');
+        Route::get('/homebanner/edit/{id}', 'HomeBannerController@edit')->name('homeBanner.edit');
+        Route::get('/homebanner/destroy/{id}', 'HomeBannerController@destroy')->name('homeBanner.destroy');
+        
+        Route::get('/news', 'NewsAdminController@getIndex')->name('newsAdmin');
+        Route::get('/news/add', 'NewsAdminController@add')->name('newsAdmin.add');
+        Route::post('/news/save', 'NewsAdminController@save')->name('saveNewsAdmin');
+        Route::get('/news/edit/{id}', 'NewsAdminController@edit')->name('newsAdmin.edit');
+        Route::get('/news/destroy/{id}', 'NewsAdminController@destroy')->name('newsAdmin.destroy');
     });
 
 });

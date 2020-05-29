@@ -71,6 +71,7 @@ ul{
         color: $lightblue;
         font-family: $title;
         font-size: 24px;
+        margin: 0;
     }
     h3{
         color: $lightblue;
@@ -78,6 +79,7 @@ ul{
         font-size: 16px;
     }
     p{
+        margin: 8px 0;
         color: $white;
         font-family: $text;
     }
@@ -85,6 +87,7 @@ ul{
 
 .button{
     box-shadow: unset;
+    box-sizing: border-box;
     width: 100%;
     font-size: 16px;
     padding: 0 32px;
@@ -130,6 +133,8 @@ ul{
     p{
         display: flex;
         width: 80%;
+        max-height: 100px;
+        overflow: hidden;
         flex: 1;
         padding: 0 32px;
         box-sizing: border-box;
@@ -147,5 +152,22 @@ ul{
         display: flex;
         flex-direction: column;
         width: 20%;
+    }
+}
+
+form{
+    >div{
+        margin-bottom: 32px;
+        .together{
+            display: flex;
+            flex-direction: column;
+            margin: 12px 0 24px;
+        }
+    }
+    i{
+        font-family: $text;
+        color: $white;
+        font-size: 12px;
+        margin-bottom: 8px;
     }
 }

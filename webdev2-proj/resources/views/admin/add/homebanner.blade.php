@@ -5,47 +5,61 @@
     <form action="{{route('saveHomeBanner', app()->getLocale())}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
-            <h2>Please select where your text should be:</h2>
-            <p>Position:</p>
-            <br>
-            <input type="radio" id="left" name="position" value="l" checked="checked">
-            <label for="left">Left</label><br>
-            <input type="radio" id="right" name="position" value="r">
-            <label for="right">Right</label><br>
-        </div>
-
-        <div>
-            <h2>Please select what color your text should be:</h2>
+            <h2>{{ __('admin.form.textPos') . ':' }}</h2>
             <div>
-                <p for="left">Color: </p>
-                <br>
-                <input type="radio" id="bright" name="color" value="d" checked="checked">
-                <label for="bright">bright</label><br>
-                <input type="radio" id="dark" name="color" value="b">
-                <label for="dark">dark</label><br>
+                <p>{{ __('admin.form.pos') }}<span class="required">*</span></p>
+                <input type="radio" id="left" name="position" value="l" checked="checked">
+                <label for="left">{{ __('admin.form.pos1') }}</label><br>
+                <input type="radio" id="right" name="position" value="r">
+                <label for="right">{{ __('admin.form.pos2') }}</label><br>
             </div>
         </div>
 
         <div>
-            <h2>English:</h2>
-            <label for="title_en">English title</label>
-            <input type="text" name="title_en">
-            <label for="text_en">English text</label>
-            <p>Always use &lt;p&gt; tags for a new paragraph, close it with &lt;/p&gt;</p>
-            <textarea name="text_en"><p></p></textarea>
+            <h2>{{ __('admin.form.textCol') . ':' }}</h2>
+            <div>
+                <p for="left">{{ __('admin.form.col') }}<span class="required">*</span></p>
+                <input type="radio" id="bright" name="color" value="d" checked="checked">
+                <label for="bright">{{ __('admin.form.col1') }}</label><br>
+                <input type="radio" id="dark" name="color" value="b">
+                <label for="dark">{{ __('admin.form.col2') }}</label><br>
+            </div>
+        </div>
+
+        <div>
+            <h2>{{ __('admin.form.lang1') . ':' }}</h2>
+            <div class="together">
+                <label for="title_en">{{ __('admin.form.lang1') .' '. __('admin.form.title') }}<span class="required">*</span></label>
+            <input type="text" name="title_en" placeholder="{{__('admin.form.title')}}"required>
+            </div>
+            <div class="together">
+                <label for="text_en">{{ __('admin.form.lang1') .' '. __('admin.form.text') }}<span class="required">*</span></label>
+                <i>{{ __('admin.form.textWarning') }}</i>
+                <textarea name="text_en"><p></p></textarea>
+            </div>
         </div>
         
-        <p>Dutch:</p>
-        <label for="title_nl">Dutch title</label>
-        <input type="text" name="title_nl">
-        <label for="text_nl">Dutch text</label>
-        <textarea name="text_nl"><p></p></textarea>
-        <br>
-        <br>
-        <label for="image">Image</label>
-        <input type="file" name="image" id="image" required>
-        <br>
-        <br>
-        <input type="submit" value="Submit">
+        <div>
+            <h2>{{ __('admin.form.lang2') . ':' }}</h2>
+            <div class="together">
+                <label for="title_nl">{{ __('admin.form.lang2') .' '. __('admin.form.title') }}<span class="required">*</span></label>
+                <input type="text" name="title_nl" placeholder="{{__('admin.form.title')}}" required>
+            </div>
+            <div class="together">
+                <label for="text_nl">{{ __('admin.form.lang2') .' '. __('admin.form.text') }}<span class="required">*</span></label>
+                <i>{{ __('admin.form.textWarning') }}</i>
+                <textarea name="text_nl"><p></p></textarea>
+            </div>
+        </div>
+
+        <div>
+            <h2>{{ __('admin.form.image') . ':'}}</h2>
+            <div class="together">
+                <label for="image">{{ __('admin.form.upload')}}<span class="required">*</span></label>
+                <input type="file" name="image" id="image" required>
+            </div>
+        </div>
+
+        <input type="submit" value="{{ __('admin.form.submit')}}">
     </form>
 @endsection

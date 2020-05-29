@@ -22,21 +22,20 @@
         <div class="toolbar">
             <div class="container">
                 <ul>
-                    {{-- saving optional parameters to keep when changing languages --}}
-                    @if(isset($post->id))
-                        <?php $post = $post->id ?>
-                    @else
-                        <?php $post = null ?>
+                    {{-- saving id parameters when changing languages --}}
+                    @if(!isset($id))
+                        @php $id = null @endphp
                     @endif
 
+                    {{-- saving page pagination page parameter when changing languages --}}
                     @if(isset($_GET['page']))
-                        <?php $page= $_GET['page'] ?>
+                        @php $page= $_GET['page'] @endphp
                     @else 
-                        <?php $page=null ?> 
+                        @php $page=null @endphp
                     @endif
 
-                    <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en', 'page' => $page, 'news' => $post ]) }}">EN</a></li>  
-                    <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'page' => $page, 'news' => $post ]) }}">NL</a></li>  
+                    <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en', 'page' => $page, 'id' => $id ]) }}">EN</a></li>  
+                    <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'page' => $page, 'id' => $id ]) }}">NL</a></li>  
                     <li><a href="">{{ __('header.donate') }}</a></li>
                     <li><a href="{{ route('contact', app()->getLocale()) }}">{{ __('header.contact') }}</a></li>
                     @guest

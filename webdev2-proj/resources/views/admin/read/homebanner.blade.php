@@ -13,7 +13,7 @@
             </div>
             <div class="buttons">
                 <a class="edit button" href="{{ route('homeBanner.edit', [app()->getLocale(), $banner->id])}}">{{__('admin.edit')}}</a>
-                <a class="delete button" href="{{ route('homeBanner.destroy', ['language' => app()->getLocale(), 'banner' => $banner->id]) }}">{{__('admin.delete')}}</a>  
+                <a class="delete button" href="{{ route('homeBanner.destroy', ['language' => app()->getLocale(), 'id' => $banner->id]) }}">{{__('admin.delete')}}</a>  
             </div>
         </li>
     @endforeach

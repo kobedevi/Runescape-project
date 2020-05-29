@@ -392,6 +392,7 @@ ul {
   color: #b2dbee;
   font-family: Cinzel;
   font-size: 24px;
+  margin: 0;
 }
 .admincontainer h3 {
   color: #b2dbee;
@@ -399,12 +400,14 @@ ul {
   font-size: 16px;
 }
 .admincontainer p {
+  margin: 8px 0;
   color: #ECEDEE;
   font-family: Museo;
 }
 
 .button {
   box-shadow: unset;
+  box-sizing: border-box;
   width: 100%;
   font-size: 16px;
   padding: 0 32px;
@@ -452,6 +455,8 @@ ul {
 .listitem p {
   display: flex;
   width: 80%;
+  max-height: 100px;
+  overflow: hidden;
   flex: 1;
   padding: 0 32px;
   box-sizing: border-box;
@@ -469,4 +474,19 @@ ul {
   display: flex;
   flex-direction: column;
   width: 20%;
+}
+
+form > div {
+  margin-bottom: 32px;
+}
+form > div .together {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0 24px;
+}
+form i {
+  font-family: Museo;
+  color: #ECEDEE;
+  font-size: 12px;
+  margin-bottom: 8px;
 }

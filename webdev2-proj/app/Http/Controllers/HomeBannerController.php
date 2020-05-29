@@ -18,12 +18,9 @@ class HomeBannerController extends Controller
         return view("admin.add.homebanner");
     }
 
-    public function edit($language, $banner = null) {
-        $banner = HomeBanner::find($banner);
-        if($banner == null || !$banner){
-            return redirect()->route('homeBanner', app()->getLocale());
-        }
-        return view("admin.edit.homebanner", compact(['language', 'banner']));
+    public function edit($language, $id = null) {
+        $banner = HomeBanner::findOrFail($id);
+        return view("admin.edit.homebanner", compact(['banner', 'id']));
     }
 
     public function save(Request $r) {
@@ -58,8 +55,8 @@ class HomeBannerController extends Controller
         return redirect()->route('homeBanner', app()->getLocale());
     }
 
-    public function destroy($language, $banner) {
-        HomeBanner::find($banner)->delete();
+    public function destroy($language, $id) {
+        HomeBanner::find($id)->delete();
         return redirect()->route('homeBanner', app()->getLocale());
     }
 }

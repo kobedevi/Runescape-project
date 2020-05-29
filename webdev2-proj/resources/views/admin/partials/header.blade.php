@@ -23,16 +23,19 @@
             <div class="container">
                 <ul>
 
+                    {{-- saving id parameters when changing languages --}}
+                    @if(!isset($id))
+                        @php $id = null @endphp
+                    @endif
+
                     @if(isset($banner->id))
                         <?php $banner = $banner->id ?>
                     @else
                         <?php $banner = null ?>
                     @endif
 
-                    <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en', 'banner' => $banner]) }}">EN</a></li>  
-                    <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'banner' => $banner]) }}">NL</a></li>  
-                    {{-- <li><a class="cta" href="{{ route('logout', app()->getLocale()) }}"  >{{ __('header.logout') }}</a></li> --}}
-                    {{-- <li><a class="cta" href="#" onclick="location.replace('/logout')" >{{ __('header.logout') }}</a></li> --}}
+                    <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en', 'id' => $id]) }}">EN</a></li>  
+                    <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'id' => $id]) }}">NL</a></li>  
                     <li role="menuitem">
                         <a style='' href="{{ route('logout', app()->getLocale()) }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
