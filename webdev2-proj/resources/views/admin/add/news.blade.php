@@ -13,12 +13,10 @@
             </div>
             <div class="together">
                 <label for="intro_en">{{ __('admin.form.lang1_1') .' '. __('admin.form.intro') }}<span class="required">*</span></label>
-                <i>{{ __('admin.form.textWarning') }}</i>
                 <textarea name="intro_en"></textarea>
             </div>
             <div class="together">
                 <label for="text_en">{{ __('admin.form.lang1_1') .' '. __('admin.form.text') }}<span class="required">*</span></label>
-                <i>{{ __('admin.form.textWarning') }}</i>
                 <textarea name="text_en"></textarea>
             </div>
         </div>
@@ -31,12 +29,10 @@
             </div>
             <div class="together">
                 <label for="intro_nl">{{ __('admin.form.lang2_1') .' '. __('admin.form.intro') }}<span class="required">*</span></label>
-                <i>{{ __('admin.form.textWarning') }}</i>
                 <textarea name="intro_nl"></textarea>
             </div>
             <div class="together">
                 <label for="text_nl">{{ __('admin.form.lang2_1') .' '. __('admin.form.text') }}<span class="required">*</span></label>
-                <i>{{ __('admin.form.textWarning') }}</i>
                 <textarea name="text_nl"></textarea>
             </div>
         </div>

@@ -2,11 +2,13 @@
     return [
         'homebanner' => 'Home banners',
         'news' => 'News',
+        'privacy' => 'Privacy policy',
         'adminpanel' => 'Admin panel',
         'addhomebanner' => 'Add home banner',
         'edithomebanner' => 'Edit home banner',
         'addnews' => 'Add newspost',
         'editnews' => 'Edit newspost', 
+        'editprivacy' => 'Edit privacy policy', 
         'add' => 'Add',
         'edit' => 'Edit',
         'delete' => 'Delete',

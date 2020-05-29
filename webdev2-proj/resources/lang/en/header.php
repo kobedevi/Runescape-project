@@ -7,7 +7,8 @@
         'admin' => 'Dasboard',
         'home' => 'Home',
         'news' => 'News',
-        'about' => 'About'
+        'about' => 'About',
+        'privacy' => 'Privacy policy',
     ]
     
 ?>

@@ -2,6 +2,7 @@
     return [
         'homebanner' => 'Home banners',
         'news' => 'Nieuws',
+        'privacy' => 'Privacybeleid',
         'adminpanel' => 'Admin paneel',
         'addhomebanner' => 'Voeg home banner toe',
         'edithomebanner' => 'Bewerk home banner ',

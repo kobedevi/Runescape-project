@@ -1,4 +1,5 @@
 @include('admin.partials.header')
+@yield("scripts")
 
 <div class="content">
     <div class="admin">

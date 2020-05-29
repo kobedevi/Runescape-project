@@ -17,6 +17,37 @@ $white: #ECEDEE;
 $text: Museo;
 $title: Cinzel;
 
+// text editor 
+
+main{
+    p{
+        font-family: $text;
+        color: $white;
+        font-size: 16px;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-family: $title;
+        color: $yellow;
+    }
+    blockquote{
+        position: relative;
+        display: flex;
+        width: calc(100% - 32px);
+        box-sizing: border-box;
+        margin-left: 32px;
+        &::before{
+            position: absolute;
+            left: -28px;
+            content:' ';
+            width: 4px;
+            height: 100%;
+            background-color: $yellow;
+        }
+    }
+}
+
+.tox-notifications-container {display:none!important;}
+
 .container {
     margin: 0 auto;
     box-sizing: border-box;
@@ -315,6 +346,9 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    p {
+        color: $black;
+    }
     .container{
         display: flex;
         flex-direction: row;

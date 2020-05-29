@@ -6,6 +6,35 @@
   font-family: Museo;
   src: url("/fonts/MuseoSans_500.otf");
 }
+main p {
+  font-family: Museo;
+  color: #ECEDEE;
+  font-size: 16px;
+}
+main h1, main h2, main h3, main h4, main h5, main h6 {
+  font-family: Cinzel;
+  color: #E1BB34;
+}
+main blockquote {
+  position: relative;
+  display: flex;
+  width: calc(100% - 32px);
+  box-sizing: border-box;
+  margin-left: 32px;
+}
+main blockquote::before {
+  position: absolute;
+  left: -28px;
+  content: " ";
+  width: 4px;
+  height: 100%;
+  background-color: #E1BB34;
+}
+
+.tox-notifications-container {
+  display: none !important;
+}
+
 .container {
   margin: 0 auto;
   box-sizing: border-box;
@@ -297,6 +326,9 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+}
+footer p {
+  color: #091013;
 }
 footer .container {
   display: flex;

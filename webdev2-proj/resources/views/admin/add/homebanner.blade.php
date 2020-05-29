@@ -34,7 +34,6 @@
             </div>
             <div class="together">
                 <label for="text_en">{{ __('admin.form.lang1') .' '. __('admin.form.text') }}<span class="required">*</span></label>
-                <i>{{ __('admin.form.textWarning') }}</i>
                 <textarea name="text_en"><p></p></textarea>
             </div>
         </div>
@@ -47,7 +46,6 @@
             </div>
             <div class="together">
                 <label for="text_nl">{{ __('admin.form.lang2') .' '. __('admin.form.text') }}<span class="required">*</span></label>
-                <i>{{ __('admin.form.textWarning') }}</i>
                 <textarea name="text_nl"><p></p></textarea>
             </div>
         </div>

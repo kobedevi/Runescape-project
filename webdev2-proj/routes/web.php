@@ -18,11 +18,6 @@ Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function() {
 
-    $language = App::getLocale();
-    if (! in_array($language, ['en', 'nl'])) {
-        abort(400);
-    }
-
     Route::get('/', 'StartController@getIndex')->name('start');
 
     Route::get('/contact', 'ContactController@getIndex')->name('contact');
@@ -31,7 +26,7 @@ Route::group(['prefix' => '{language}'], function() {
     Route::get('/news', 'NewsController@getIndex')->name('news');
     Route::get('/news/{id}', 'NewsController@getDetail')->name('news.detail');   
     
-    Route::get('/privacy-policy', 'NewsController@getIndex')->name('news');
+    Route::get('/privacy-policy', 'PrivaciesController@getIndex')->name('privacy');
 
     
     Route::group(['prefix' => 'dashboard'], function() {
@@ -50,6 +45,9 @@ Route::group(['prefix' => '{language}'], function() {
         Route::post('/news/save', 'NewsAdminController@save')->name('saveNewsAdmin');
         Route::get('/news/edit/{id}', 'NewsAdminController@edit')->name('newsAdmin.edit');
         Route::get('/news/destroy/{id}', 'NewsAdminController@destroy')->name('newsAdmin.destroy');
+
+        Route::get('/privacy/edit', 'PrivaciesController@edit')->name('privacy.edit');
+        Route::post('/privacy/save', 'PrivaciesController@save')->name('savePrivacy');
     });
 
 });

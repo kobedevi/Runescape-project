@@ -7,7 +7,8 @@
         'admin' => 'Dashboard',
         'home' => 'Home',
         'news' => 'Nieuws',
-        'about' => 'Over ons'
+        'about' => 'Over ons',
+        'privacy' => 'Privacybeleid',
     ]
     
 ?>

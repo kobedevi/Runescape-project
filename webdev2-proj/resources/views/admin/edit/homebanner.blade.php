@@ -34,7 +34,6 @@
             </div>
             <div class="together">
                 <label for="text_en">{{ __('admin.form.lang1_1') .' '. __('admin.form.text') }}</label>
-                <i>{{ __('admin.form.textWarning') }}</i>
                 <textarea name="text_en">{{ old('text_en', ($banner ? $banner->text_en : '<p></p>')) }}</textarea>
             </div>
         </div>
@@ -47,7 +46,6 @@
             </div>
             <div class="together">
                 <label for="text_nl">{{ __('admin.form.lang2_1') .' '. __('admin.form.text') }}</label>
-                <i>{{ __('admin.form.textWarning') }}</i>
                 <textarea name="text_nl">{{ old('text_nl', ($banner ? $banner->text_nl : '<p></p>')) }}</textarea>
             </div>
         </div>

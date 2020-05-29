@@ -17,7 +17,7 @@
             </div>
             <div class="together">
                 <label for="text_en">{{ __('admin.form.lang1_1') .' '. __('admin.form.text') }}</label>
-                <textarea name="text_en">{{ old('text_en', ($post ? $post->text_en : '<p></p>')) }}</textarea>
+                <textarea id="text_en" name="text_en">{{ old('text_en', ($post ? $post->text_en : '<p></p>')) }}</textarea>
             </div>
         </div>
         
