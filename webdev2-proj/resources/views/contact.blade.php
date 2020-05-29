@@ -3,6 +3,7 @@
 @section('content')
         <div class="container">
             <form action="" method="POST" class="contact">
+                <h1>{{ __('header.contact') }}</h1>
                 @csrf
                 <div class="">
                     <label for="name">{{ __('contact.name') }}<span class="required">*</span></label>

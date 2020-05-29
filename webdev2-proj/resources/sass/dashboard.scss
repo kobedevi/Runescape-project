@@ -112,6 +112,10 @@ ul{
     width:300px;
 }
 
+form input[type=submit]{
+    margin-bottom: 32px;
+}
+
 .listitem{
     display: flex;
     flex-direction: row;

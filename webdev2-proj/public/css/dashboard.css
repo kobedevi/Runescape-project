@@ -269,6 +269,13 @@ nav a {
   width: 35%;
 }
 
+form.contact h1 {
+  width: 100%;
+  color: #E1BB34;
+  font-family: Cinzel;
+  margin: 0 0 64px;
+}
+
 label {
   width: 100%;
   color: #ECEDEE;
@@ -463,6 +470,10 @@ ul {
 
 .add {
   width: 300px;
+}
+
+form input[type=submit] {
+  margin-bottom: 32px;
 }
 
 .listitem {

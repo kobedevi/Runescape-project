@@ -291,6 +291,15 @@ nav {
 }
 
 // input
+form.contact{
+    h1{
+        width: 100%;
+        color: $yellow;
+        font-family: $title;
+        margin:0 0 64px
+    }
+}
+
 label{
     width: 100%;
     color: $white;
