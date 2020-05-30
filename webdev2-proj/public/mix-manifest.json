@@ -1,6 +1,6 @@
 {
     "/css/app.css": "/css/app.css",
+    "/css/contact.css": "/css/contact.css",
     "/css/news.css": "/css/news.css",
-    "/css/dashboard.css": "/css/dashboard.css",
-    "/css/contact.css": "/css/contact.css"
+    "/css/dashboard.css": "/css/dashboard.css"
 }

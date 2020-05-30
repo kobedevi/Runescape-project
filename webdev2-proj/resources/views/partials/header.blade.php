@@ -17,7 +17,37 @@
     <meta name="theme-color" content="#ffffff">  
 	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
+
+<script>
+     
+
+
+</script>
+
 <body>
+    
+    {{-- alerts --}}
+    @if(session()->has('warning') || session()->has('succes'))
+        <div id="alert" 
+        @if(session()->has('warning'))
+            class="warning alert"
+        @else 
+            class="succes alert"
+        @endif
+        >
+            {{ session()->get('message') }}
+            {{ session()->has('warning') ? session()->get('warning') : session()->get('succes') }}
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        </div>
+        <script>
+            let alert = document.getElementById('alert');
+            console.log(alert);
+            setTimeout(function(){ 
+                alert.style.display ='none';
+            },4000); 
+        </script>
+    @endif
+
     <header>
         <div class="toolbar">
             <div class="container">
@@ -36,7 +66,7 @@
 
                     <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en', 'page' => $page, 'id' => $id ]) }}">EN</a></li>  
                     <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'page' => $page, 'id' => $id ]) }}">NL</a></li>  
-                    <li><a href="">{{ __('header.donate') }}</a></li>
+                    <li><a href="{{ route('donate', app()->getLocale() ) }}">{{ __('header.donate') }}</a></li>
                     <li><a href="{{ route('contact', app()->getLocale()) }}">{{ __('header.contact') }}</a></li>
                     @guest
                         <li><a class="cta" href="{{ route('admin', app()->getLocale()) }}">{{ __('header.login') }}</a></li>

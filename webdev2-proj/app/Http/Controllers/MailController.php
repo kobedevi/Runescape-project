@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Spatie\Newsletter\NewsletterFacade as Newsletter;
+use App;
 
 class MailController extends Controller
 {
@@ -26,5 +28,13 @@ class MailController extends Controller
             }); 
         }
         return redirect()->route('start', $lang);
+    }
+
+    public function store(Request $request) {
+        if ( ! Newsletter::isSubscribed($request->user_email) ) {
+            Newsletter::subscribePending($request->user_email);
+            return redirect('/'.App::getLocale()."#newsletter")->with('succes', "you have succesfully subscribed");
+        }
+        return redirect('/'.App::getLocale()."#newsletter")->with('warning', 'You are already subscribed!');
     }
 }

@@ -35,12 +35,12 @@
     @endforeach
 
     {{-- newsletter sign up --}}
-    <section class="newsletter">
+    <section id="newsletter" class="newsletter">
         <div class="container">
-            <form action="">
+        <form action="" method="POST">
                 @csrf
-                <label for="email">{{ __('home.newsletter') }}</label><br>
-                <input type="email" name="email" placeholder="{{ __('home.examplemail') }}">
+                <label for="user_email">{{ __('home.newsletter') }}</label><br>
+                <input type="email" name="user_email" placeholder="{{ __('home.examplemail') }}" required>
                 <input type="submit" value="{{ __('home.signup') }}">
             </form>
         </div>

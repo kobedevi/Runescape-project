@@ -46,6 +46,42 @@ main{
     }
 }
 
+#alert{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 16px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $text;
+    color: $white;
+    padding: 8px 16px;
+    z-index: 50000;
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+}
+
+.succes{
+    border: 2px solid #33691E;
+    background: #4CAF50;
+}
+
+.warning{
+    border: 2px solid #af6a05;
+    background: #ff9800;
+}
+
 .tox-notifications-container {display:none!important;}
 
 .container {
@@ -265,8 +301,6 @@ nav {
         float: right;
     }
 }
-
-
 
 .newsletter{
     width: 100%;
