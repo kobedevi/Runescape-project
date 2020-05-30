@@ -21,8 +21,7 @@ Route::group(['prefix' => '{language}'], function() {
     Route::get('/', 'StartController@getIndex')->name('start');
     Route::post('/', 'MailController@store')->name('subscribe');
 
-    Route::get('/donate', 'DonationsController@getIndex')->name('donate')
-    ;
+    Route::get('/donate', 'DonationsController@getIndex')->name('donate');
     Route::get('/contact', 'ContactController@getIndex')->name('contact');
     Route::post('/contact', 'MailController@sendContact')->name('contact.save');
 

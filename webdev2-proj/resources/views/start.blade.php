@@ -5,7 +5,6 @@
     <section class="attention">
         <img src="{{asset('/images/sec0.jpg')}}">
         <div class="title">
-            {{-- <h1>RUNESCAPE ON<br><span>MOBILE</span></h1> --}}
             <h1>{!! __('home.bigTitle') !!}</h1>
         </div>
     </section>
@@ -14,11 +13,11 @@
     @foreach ($banners as $banner)
     <section class="splash">
         <img src="{{ asset('/images/banners/'. $banner->image) }}">
-        @if($banner->position == 'l')
-            <div class="left">
-        @else
-            <div class="right">
-        @endif
+            @if($banner->position == 'l')
+                <div class="left">
+            @else
+                <div class="right">
+            @endif
             <div class="container">
         
             @if($banner->color == "d")
