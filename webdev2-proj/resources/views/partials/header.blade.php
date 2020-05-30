@@ -53,7 +53,7 @@
                     <li class="logo" ><a href="{{ route('start', app()->getLocale()) }}">Runescape</a></li>
                     <li><a href="{{ route('start', app()->getLocale()) }}">{{ __('header.home') }}</a></li>
                     <li><a href="{{ route('news', app()->getLocale()) }}">{{ __('header.news') }}</a></li>
-                    <li><a href="">{{ __('header.about') }}</a></li>
+                    <li><a href="{{ route('about', app()->getLocale()) }}">{{ __('header.about') }}</a></li>
                 </ul>
             </div>
         </nav>

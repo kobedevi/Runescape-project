@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePrivacyTable extends Migration
+class CreateAboutsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,7 @@ class CreatePrivacyTable extends Migration
      */
     public function up()
     {
-        // unneeded table
-        Schema::create('privacy', function (Blueprint $table) {
+        Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->longText('text_en');
             $table->longText('text_nl');
@@ -29,6 +28,6 @@ class CreatePrivacyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('privacy');
+        Schema::dropIfExists('abouts');
     }
 }

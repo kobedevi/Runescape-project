@@ -23,6 +23,6 @@ class DropPrivacyTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('privacy');
     }
 }

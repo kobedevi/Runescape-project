@@ -27,6 +27,7 @@ Route::group(['prefix' => '{language}'], function() {
     Route::get('/news/{id}', 'NewsController@getDetail')->name('news.detail');   
     
     Route::get('/privacy-policy', 'PrivaciesController@getIndex')->name('privacy');
+    Route::get('/about', 'AboutsController@getIndex')->name('about');
 
     
     Route::group(['prefix' => 'dashboard'], function() {
@@ -48,6 +49,9 @@ Route::group(['prefix' => '{language}'], function() {
 
         Route::get('/privacy/edit', 'PrivaciesController@edit')->name('privacy.edit');
         Route::post('/privacy/save', 'PrivaciesController@save')->name('savePrivacy');
+        
+        Route::get('/about/edit', 'AboutsController@edit')->name('about.edit');
+        Route::post('/about/save', 'AboutsController@save')->name('saveAbout');
     });
 
 });
