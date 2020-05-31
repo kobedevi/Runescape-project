@@ -27,6 +27,6 @@ class PrivaciesController extends Controller
         
         $update->update($privacy);   
 
-        return redirect()->route('admin', app()->getLocale());
+        return redirect()->route('privacy.edit', app()->getLocale())->with('succes', trans('alert.edit'));
     }
 }

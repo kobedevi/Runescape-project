@@ -8,8 +8,10 @@
             <main>
                 <article>
                     <h3>{{ $post->{'title_'.App::getLocale()} }}</h3>
-                    <p class="intro">{{ $post->{'intro_'.App::getLocale()} }}</p>
-                    <p class="text">{{ $post->{'text_'.App::getLocale()} }}</p>
+                    <div class="intro">
+                        {!! $post->{'intro_'.App::getLocale()} !!}
+                    </div>
+                    {!! $post->{'text_'.App::getLocale()} !!}
                 </article>
             </main>
         </div>

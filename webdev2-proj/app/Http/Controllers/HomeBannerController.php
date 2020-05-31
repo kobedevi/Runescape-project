@@ -47,16 +47,16 @@ class HomeBannerController extends Controller
         if($r->id) {
             $homebanner = $homebanner->toArray();
             $update = HomeBanner::where('id', $r->id)->first();
-            $update->update($homebanner);   
+            $update->update($homebanner);  
+            return redirect()->route('homeBanner.edit', ['language' => app()->getLocale(), 'id' => $r->id])->with('succes', trans('alert.edit'));
         } else {
             $homebanner->save();
+            return redirect()->route('homeBanner',  app()->getLocale())->with('succes', trans('alert.add'));
         }
-
-        return redirect()->route('homeBanner', app()->getLocale());
     }
 
     public function destroy($language, $id) {
         HomeBanner::find($id)->delete();
-        return redirect()->route('homeBanner', app()->getLocale());
+        return redirect()->route('homeBanner', app()->getLocale())->with('danger', trans('alert.delete'));
     }
 }

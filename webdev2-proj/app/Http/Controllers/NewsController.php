@@ -7,7 +7,7 @@ use App\News;
 class NewsController extends Controller
 {
     public function getIndex() {
-        $blogs = News::paginate(10);
+        $blogs = News::orderBy('id', 'DESC')->paginate(10);
 
         $enmonths = array('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'); 
         $nlmonths = array('januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december');

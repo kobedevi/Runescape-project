@@ -67,6 +67,11 @@ main blockquote::before {
   background: #ff9800;
 }
 
+.danger {
+  border: 2px solid #ff1d0d;
+  background: #fb5757;
+}
+
 .tox-notifications-container {
   display: none !important;
 }

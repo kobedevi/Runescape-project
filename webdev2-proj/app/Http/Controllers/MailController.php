@@ -33,8 +33,8 @@ class MailController extends Controller
     public function store(Request $request) {
         if ( ! Newsletter::isSubscribed($request->user_email) ) {
             Newsletter::subscribePending($request->user_email);
-            return redirect('/'.App::getLocale()."#newsletter")->with('succes', "you have succesfully subscribed");
+            return redirect('/'.App::getLocale()."#newsletter")->with('succes', trans('alert.subscribe'));
         }
-        return redirect('/'.App::getLocale()."#newsletter")->with('warning', 'You are already subscribed!');
+        return redirect('/'.App::getLocale()."#newsletter")->with('warning', trans('alert.alreadysubscribed'));
     }
 }

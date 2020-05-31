@@ -78,6 +78,7 @@
                         -webkit-line-clamp: 1; /* number of lines to show */
                         -webkit-box-orient: vertical;
                         max-width: 120px;
+                        width: fit-content;
                     }
                     span {
                         margin-left: 4px;
@@ -85,6 +86,9 @@
                         font-size: 14px;
                         color: $yellow;
                         justify-self: flex-end;
+                    }
+                    *{
+                        margin: 0;
                     }
                 }
                 p, i {
@@ -184,6 +188,7 @@
         article{
             padding: 20px 10px;
             .intro {
+                margin: 16px 0;
                 box-shadow: 0 0 10px 3px rgba(0,0,0,.7);
                 background: rgba(0,0,0,.7);
                 outline:1px solid #62686c;
@@ -192,6 +197,9 @@
                 padding: 10px;
                 color: $white;
                 font-family: $text;
+                p{
+                    margin:0 ;
+                }
             }
             font-family: $text;
             color: $white;

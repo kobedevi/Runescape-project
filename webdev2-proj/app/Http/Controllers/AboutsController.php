@@ -28,6 +28,6 @@ class AboutsController extends Controller
         
         $update->update($about);   
 
-        return redirect()->route('admin', app()->getLocale());
+        return redirect()->route('about.edit', app()->getLocale())->with('succes', trans('alert.edit'));
     }
 }

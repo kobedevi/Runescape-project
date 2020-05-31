@@ -34,7 +34,6 @@
             class="succes alert"
         @endif
         >
-            {{ session()->get('message') }}
             {{ session()->has('warning') ? session()->get('warning') : session()->get('succes') }}
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
         </div>

@@ -18,6 +18,32 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+
+
+
+    {{-- alerts --}}
+    @if(session()->has('succes') || session()->has('danger'))
+        @if(session()->has('succes'))
+            <div id="alert" class="succes alert">
+            {{ session()->get('succes') }}
+        @else
+            <div id="alert" class="danger alert">
+            {{ session()->get('danger') }}
+        @endif
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        </div>
+        <script>
+            let alert = document.getElementById('alert');
+            console.log(alert);
+            setTimeout(function(){ 
+                alert.style.display ='none';
+            },4000); 
+        </script>
+    @endif
+
+
+
+
     <script>
         tinymce.init({
             selector: 'textarea',

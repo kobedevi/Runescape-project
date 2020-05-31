@@ -8,7 +8,7 @@ use App\News;
 class NewsAdminController extends Controller
 {
     public function getIndex() {
-        $posts = News::get();
+        $posts = News::orderBy('id', 'DESC')->get();
 
         return view('admin.read.news', compact('posts'));
     }
@@ -46,16 +46,16 @@ class NewsAdminController extends Controller
         if($r->id) {
             $post = $post->toArray();
             $update = News::where('id', $r->id)->first();
-            $update->update($post);   
+            $update->update($post);
+            return redirect()->route('newsAdmin.edit', ['language' => app()->getLocale(), 'id' => $r->id])->with('succes', trans('alert.edit'));
         } else {
             $post->save();
+            return redirect()->route('newsAdmin', app()->getLocale())->with('succes', trans('alert.add'));
         }
-
-        return redirect()->route('newsAdmin', app()->getLocale());
     }
     
     public function destroy($language, $id) {
         News::find($id)->delete();
-        return redirect()->route('newsAdmin', app()->getLocale());
+        return redirect()->route('newsAdmin', app()->getLocale())->with('danger', trans('alert.delete'));
     }
 }

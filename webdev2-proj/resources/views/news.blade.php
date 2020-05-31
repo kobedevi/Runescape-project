@@ -23,7 +23,7 @@
 								<i>{{ date('d M Y',  strtotime($blog->created_at)) }}</i>
 							@endif
 							
-                                <div class="intro"><p>{{ $blog->{'intro_'.App::getLocale()} }}</p><span>read more</span></div>
+                                <div class="intro"><p>{!! $blog->{'intro_'.App::getLocale()} !!}</p><span>read more</span></div>
                             </article>
                         </section>
                     </a> 
