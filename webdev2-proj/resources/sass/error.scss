@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+$dark: #101D23;
+$lighter: #203A46;
+$yellow: #E1BB34;
+$black: #091013;
+$lightblue: #b2dbee;
+$white: #ECEDEE;
+
+@font-face {
+    font-family: Cinzel;
+    src: url('/fonts/Cinzel-Bold.otf');
+}
+@font-face {
+    font-family: Museo;
+    src: url('/fonts/MuseoSans_500.otf');
+}
+
+$text: Museo;
+$title: Cinzel;
+
+body{
+    height: 100vh;
+    background: $dark;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img{
+    max-width: 200px;
+    margin-bottom: 32px;
+}
+
+
+h1,h2{
+    font-family: $title;
+    color: $yellow;
+    font-size: 84px ;
+}
+
+h2{
+    font-size: 28px;
+    display: inline-block;
+    padding: 8px 4px;
+    border-bottom: 4px solid $white;
+}
+
+p{
+    font-family: $text;
+    margin: 32px 0 48px;
+}
+
+a{
+    font-family: $text;
+    font-size: 24px;
+    display: inline-block;
+    background: $white;
+    color: $black;
+    text-decoration: none;
+    padding: 20px 32px; 
+    transition: .2s;
+    &:hover{
+        background: rgb(212, 212, 212);
+    }
+}
+

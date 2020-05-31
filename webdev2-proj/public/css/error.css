@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Cinzel;
+  src: url("/fonts/Cinzel-Bold.otf");
+}
+@font-face {
+  font-family: Museo;
+  src: url("/fonts/MuseoSans_500.otf");
+}
+body {
+  height: 100vh;
+  background: #101D23;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+img {
+  max-width: 200px;
+  margin-bottom: 32px;
+}
+
+h1, h2 {
+  font-family: Cinzel;
+  color: #E1BB34;
+  font-size: 84px;
+}
+
+h2 {
+  font-size: 28px;
+  display: inline-block;
+  padding: 8px 4px;
+  border-bottom: 4px solid #ECEDEE;
+}
+
+p {
+  font-family: Museo;
+  margin: 32px 0 48px;
+}
+
+a {
+  font-family: Museo;
+  font-size: 24px;
+  display: inline-block;
+  background: #ECEDEE;
+  color: #091013;
+  text-decoration: none;
+  padding: 20px 32px;
+  transition: 0.2s;
+}
+a:hover {
+  background: #d4d4d4;
+}
