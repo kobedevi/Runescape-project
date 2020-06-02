@@ -5,5 +5,6 @@
         <a href="{{route('about.edit', app()->getLocale())}}"><li>{{ __('admin.about') }}</li></a>
         <a href="{{route('privacy.edit', app()->getLocale())}}"><li>{{ __('admin.privacy') }}</li></a>
         <a href="{{route('donations.read', app()->getLocale())}}"><li>{{ __('admin.donations') }}</li></a>
+        <a href="{{route('adminregister', app()->getLocale())}}"><li>Users</li></a>
     </ul>
 </div>

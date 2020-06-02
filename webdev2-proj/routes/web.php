@@ -37,7 +37,8 @@ Route::group(['prefix' => '{language}'], function() {
 
     
     Route::group(['prefix' => 'dashboard'], function() {
-        Auth::routes(['verify' => true]);
+        // Auth::routes(['verify' => true]);
+        Auth::routes();
 
         Route::get('/', 'DashboardController@getIndex')->name('admin');
 
@@ -60,6 +61,10 @@ Route::group(['prefix' => '{language}'], function() {
         Route::post('/about/save', 'AboutsController@save')->name('saveAbout');
 
         Route::get('/donations', 'DonationsAdminController@getIndex')->name('donations.read');
-    });
 
+        Route::get('/register', 'MyRegisterController@getIndex')->name('adminregister');
+        Route::post('/register', 'MyRegisterController@getIndex')->name('adminregister');
+    });
+    
 });
+

@@ -27,9 +27,11 @@ class WebhookController extends Controller
             $donation->save();
 
             Log::info('Betaling is gelukt ');
+            return redirect()->route('donate', app()->getLocale())->with('succes', trans('alert.paysucces'));
 
         } else {
             Log::warning('Betaling is mislukt ');
+            return redirect()->route('donate', app()->getLocale())->with('danger', trans('alert.payfail'));
         }
     }
 }

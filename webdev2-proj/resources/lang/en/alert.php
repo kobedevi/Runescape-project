@@ -3,9 +3,16 @@
     return [
         'subscribe' => 'You have succesfully subscribed',
         'alreadysubscribed' => 'You are already subscribed',
+        'paysucces' => 'Your payment has been received!',
+        'payfail' => 'Your payment has failed',
         'edit' => 'Changes published',
         'add' => 'Page published',
         'delete' => 'Page deleted',
+        'error' => [
+            'title' => 'Oh bugger!',
+            'info' => "That particular combination of zeros and ones hasn't worked out...<br> Please head back to our homepage try again (sorry).",
+            'back' => "Take me home, I'm drunk",
+        ]
     ]
 
 ?>

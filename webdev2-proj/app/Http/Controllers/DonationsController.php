@@ -11,7 +11,7 @@ use App;
 class DonationsController extends Controller
 {
     public function getSucces(){
-        echo 'hi';
+        return view('donateSucces');
     }
     
     public function getindex(){
@@ -44,5 +44,4 @@ class DonationsController extends Controller
         $payment = Mollie::api()->payments->get($payment->id);            
         return redirect($payment->getCheckoutUrl(), 303);
     }
-
 }
