@@ -1,6 +1,6 @@
 <?php
     return [
-        'donate' => "Doneer",
+        'donate' => "Donaties",
         'contact' => 'Contact',
         'login' => 'Inloggen',
         'logout' => 'Uitloggen',

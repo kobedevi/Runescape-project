@@ -401,6 +401,25 @@ footer::before {
   height: 5px;
 }
 
+form .currency {
+  position: relative;
+  display: flex;
+}
+form .currency span {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+  width: 15px;
+  font-family: Museo;
+  color: #ECEDEE;
+}
+form .currency input {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 25px;
+}
+
 .container.news {
   align-self: flex-start;
   justify-self: flex-start;
@@ -520,7 +539,7 @@ footer::before {
 }
 
 .pages {
-  width: 300px;
+  width: 100%;
   display: flex;
   margin: 20px auto 0;
   justify-content: center;
@@ -528,11 +547,12 @@ footer::before {
   position: relative;
 }
 .pages nav {
+  display: flex;
+  justify-content: center;
   background: unset;
   box-shadow: unset;
 }
 .pages nav ul {
-  width: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -639,4 +659,40 @@ footer::before {
   font-family: Cinzel;
   margin: 0;
   font-size: 36px;
+}
+
+#donate {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 40%;
+  width: 600px;
+  max-width: 100%;
+}
+#donate p {
+  margin-bottom: 4px;
+}
+#donate input[type=submit] {
+  margin-top: 16px;
+}
+#donate textarea {
+  height: 100px;
+}
+#donate .bigger {
+  padding: 4px 0;
+}
+
+.together {
+  display: flex;
+  width: calc(50% - 12px);
+  flex-direction: column;
+  margin-top: 24px;
+}
+.together input {
+  width: auto;
+}
+
+.large {
+  width: 100%;
 }

@@ -118,17 +118,18 @@
 }
 
 .pages {
-        width: 300px;
+        width: 100%;
         display: flex;
         margin: 20px auto 0;
         justify-content: center;
         color: $yellow;
         position: relative;
     nav {
+        display: flex;
+        justify-content: center;
         background: unset;
         box-shadow: unset;
         ul{
-            width: 100%;
             display: flex;
             flex-direction: row;
             li {
@@ -235,4 +236,40 @@
         margin:0;
         font-size: 36px;
     }
+}
+
+#donate{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 40%;
+    width: 600px ;
+    max-width: 100%;
+    p{
+        margin-bottom: 4px;
+    }
+    input[type=submit]{
+        margin-top: 16px;
+    }
+    textarea{
+        height: 100px;
+    }
+    .bigger{
+        padding:4px 0;
+    }
+}
+
+.together{
+    display: flex;
+    width: calc(50% - 12px);
+    flex-direction: column;
+    margin-top: 24px;
+    input{
+        width: auto;
+    }
+}
+
+.large {
+    width: 100%;
 }

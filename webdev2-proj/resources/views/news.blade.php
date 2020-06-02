@@ -15,12 +15,12 @@
 							{{-- translate months to nl if needed --}}
 							@if (App::getLocale() == 'nl')
 								<?php 
-									$date = date('d M Y',  strtotime($blog->created_at));
+									$date = date('d F Y',  strtotime($blog->created_at));
 									$datenl = str_ireplace($enmonths, $nlmonths, $date);
 								?>
 								<i>{{ $datenl }}</i>
 							@else
-								<i>{{ date('d M Y',  strtotime($blog->created_at)) }}</i>
+								<i>{{ date('d F Y',  strtotime($blog->created_at)) }}</i>
 							@endif
 							
                                 <div class="intro"><p>{!! $blog->{'intro_'.App::getLocale()} !!}</p><span>read more</span></div>

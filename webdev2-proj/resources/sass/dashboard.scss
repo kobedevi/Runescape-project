@@ -179,3 +179,60 @@ form{
 .tox-tinymce{
     min-height: 350px !important;
 }
+
+.listitem div:first-of-type.donation{
+    width: 100%;
+}
+
+.listitem .full{
+    overflow: visible;
+    width: 100%;
+    padding: 0;
+}
+
+h4{
+    width: 100%;
+    margin: 0;
+    color: $lightblue;
+    font-family: $text;
+}
+
+.listitem{
+    .donation{
+        .titles{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        h3{
+            margin-bottom: 4px;
+        }
+        h4{
+            margin-bottom: 8px;
+            color: $yellow;
+        }
+        .donationText{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            flex-direction: row;
+            p{
+                flex: unset;
+                width: auto;
+                padding: 0;
+            }
+            .full{
+                max-height: unset;
+                flex: 1;
+                box-sizing: border-box;
+                padding-right: 48px;
+            }
+        }
+        .data{
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            width: auto;
+        }
+    }
+}

@@ -17,11 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function() {
-
+    
     Route::get('/', 'StartController@getIndex')->name('start');
     Route::post('/', 'MailController@store')->name('subscribe');
-
+    
     Route::get('/donate', 'DonationsController@getIndex')->name('donate');
+    Route::post('/donate', 'DonationsController@preparePayment')->name('donate.pay'); // sending transaction
+    Route::any('/webhooks/mollie', 'WebhookController@handle')->name('webhooks.mollie'); // checking transaction?
+    Route::get('/donate/succes', 'DonationsController@getSucces')->name('donationSuccess');
+
     Route::get('/contact', 'ContactController@getIndex')->name('contact');
     Route::post('/contact', 'MailController@sendContact')->name('contact.save');
 
@@ -54,6 +58,8 @@ Route::group(['prefix' => '{language}'], function() {
         
         Route::get('/about/edit', 'AboutsController@edit')->name('about.edit');
         Route::post('/about/save', 'AboutsController@save')->name('saveAbout');
+
+        Route::get('/donations', 'DonationsAdminController@getIndex')->name('donations.read');
     });
 
 });

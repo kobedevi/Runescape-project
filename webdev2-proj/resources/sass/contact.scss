@@ -1,5 +1,7 @@
 // contact
 
+@import "app";
+
 form.contact{
     width: 60%;
     margin: 0 auto;
@@ -20,4 +22,76 @@ form.contact{
     input[type=submit]{
         margin-top: 32px;
     }
+}
+
+.donationcontainer{
+    margin-top: 128px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.donationblock {
+    font-family: $text;
+    position: relative;
+    display: flex;
+    width: calc(50% - 16px);
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 30px 0px;
+    h1{
+        float: left;
+        white-space: nowrap;
+        min-width: 140px;
+        width: 50%;
+        margin: 0;
+        height: 100%;
+        font-family: $title;
+        font-size: 32px;
+        display: flex;
+        align-items:center;
+    }
+    h3{
+        margin: 0;
+        color: $lightblue;
+    }
+    p, i {
+        font-size: 14px;
+        color: $white;
+    }
+    .right{
+        display: flex;
+        height: 100%;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 50%;
+        float: right;
+        text-align: right;
+        *{
+            width: 100%;
+        }
+    }
+    &::after{
+        content: " ";
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        box-sizing: border-box;
+        bottom: 0;
+        border-top: 1px solid $lighter;
+        border-bottom: 1px solid $black;
+    }
+}
+
+.donationblock:nth-of-type(1)::before, .donationblock:nth-of-type(2)::before{
+    content: " ";
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    border-top: 1px solid $lighter;
+    border-bottom: 1px solid $black;
 }

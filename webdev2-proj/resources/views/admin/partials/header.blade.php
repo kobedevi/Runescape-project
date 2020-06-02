@@ -48,7 +48,9 @@
         tinymce.init({
             selector: 'textarea',
             skin: "oxide-dark",
-            content_css: "dark"
+            content_css: "dark",
+            plugins: "lists",
+            toolbar: "undo redo | styleselect | bold italic | link image | alignleft aligncenter alignright justify | bullist numlist outdent indent"
         });
     </script>
     <header>

@@ -8,5 +8,4 @@
         'message' => 'Bericht',
         'button' => 'Verstuur',
     ]
-
 ?>

@@ -421,3 +421,22 @@ footer {
         height: 5px;
     }
 }
+
+form .currency{
+    position: relative;
+    display: flex;
+    span{
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translate(0, -50%);
+        width: 15px;
+        font-family: $text;
+        color: $white;
+    }
+    input{
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 25px;
+    }
+}

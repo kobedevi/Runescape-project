@@ -13,6 +13,10 @@ class DatabaseSeeder extends Seeder
     {
         for ($i=0; $i < 50; $i++) { 
             $this->call(NewsSeeder::class);
+            $this->call(DonationSeeder::class);
         }
+        $this->call(HomebannerSeeder::class);
+        $this->call(PrivaciesSeeder::class);
+        $this->call(AboutsSeeder::class);
     }
 }

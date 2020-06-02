@@ -401,6 +401,25 @@ footer::before {
   height: 5px;
 }
 
+form .currency {
+  position: relative;
+  display: flex;
+}
+form .currency span {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+  width: 15px;
+  font-family: Museo;
+  color: #ECEDEE;
+}
+form .currency input {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 25px;
+}
+
 ul {
   list-style: none;
 }
@@ -577,4 +596,57 @@ form i {
 
 .tox-tinymce {
   min-height: 350px !important;
+}
+
+.listitem div:first-of-type.donation {
+  width: 100%;
+}
+
+.listitem .full {
+  overflow: visible;
+  width: 100%;
+  padding: 0;
+}
+
+h4 {
+  width: 100%;
+  margin: 0;
+  color: #b2dbee;
+  font-family: Museo;
+}
+
+.listitem .donation .titles {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.listitem .donation h3 {
+  margin-bottom: 4px;
+}
+.listitem .donation h4 {
+  margin-bottom: 8px;
+  color: #E1BB34;
+}
+.listitem .donation .donationText {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.listitem .donation .donationText p {
+  flex: unset;
+  width: auto;
+  padding: 0;
+}
+.listitem .donation .donationText .full {
+  max-height: unset;
+  flex: 1;
+  box-sizing: border-box;
+  padding-right: 48px;
+}
+.listitem .donation .data {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  width: auto;
 }

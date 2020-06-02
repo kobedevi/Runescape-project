@@ -400,3 +400,22 @@ footer::before {
   width: 100%;
   height: 5px;
 }
+
+form .currency {
+  position: relative;
+  display: flex;
+}
+form .currency span {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+  width: 15px;
+  font-family: Museo;
+  color: #ECEDEE;
+}
+form .currency input {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 25px;
+}
