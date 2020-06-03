@@ -1,0 +1,65 @@
+//admin panel
+@import 'app';
+
+.user{
+    background: $dark;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .initial{
+        width: 110px ;
+        display: flex;
+        background: #1ABC9C;
+        justify-content: center;
+        align-items: center;
+        font-family: $text;
+        color: $white;
+        font-size: 48px;
+        text-transform: uppercase;
+    }
+    .infocollection
+    {
+        display: flex;
+        flex: 2;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px 10px;
+        box-sizing: border-box;
+        .name p{
+            font-size: 22px;
+            text-transform: capitalize;
+            .role{
+                margin-left: 8px;
+                font-size: 12px;
+            }
+        }
+        .userinfo{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .listinfo{
+                min-width: 200px;
+                margin-right: 24px;
+            }
+            .prefix{
+                margin-right: 4px;
+                color: $lightblue;
+            }
+        }
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        padding: 0 10px;
+    }
+}

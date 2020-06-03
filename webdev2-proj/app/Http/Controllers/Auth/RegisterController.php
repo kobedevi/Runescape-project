@@ -2,15 +2,24 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
+
+    public function getIndex() {
+        $users = User::orderby('id')->get();
+        return view('admin.read.users', compact('users'));
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -38,7 +47,24 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
+    }
+
+    public function getRegister()
+    {
+        return view("admin.add.register");
+    }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        event(new Registered($user = $this->create($request->all())));
+        if ($response = $this->registered($request, $user)) {
+            return $response;
+        }
+        return $request->wantsJson()
+                    ? new Response('', 201)
+                    : redirect(route('users', app()->getLocale()));
     }
 
     /**
@@ -47,6 +73,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -69,5 +96,10 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function destroy($lang, $id){
+        User::find($id)->delete();
+        return redirect()->route('users', app()->getLocale())->with('danger', trans('alert.delete'));
     }
 }

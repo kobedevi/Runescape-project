@@ -7,6 +7,7 @@
     <title>Runescape mobile - admin panel</title>
     <link rel="stylesheet" href="{{ mix('/css/contact.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/news.css') }}">
+    <link rel="stylesheet" href="{{ mix('/css/users.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/dashboard.css') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/branding/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/branding/favicon-32x32.png') }}">

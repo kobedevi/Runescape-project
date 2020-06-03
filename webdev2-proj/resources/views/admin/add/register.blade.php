@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('admin.layout')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('adminregister', app()->getLocale()) }}">
+                    <form method="POST" action="{{ route('saveAdmin.register', app()->getLocale()) }}">
                         @csrf
 
                         <div class="form-group row">

@@ -5,6 +5,7 @@
         'privacy' => 'Privacybeleid',
         'about' => 'Over ons',
         'donations' => 'Donaties',
+        'users' => 'Gebruikers',
         'adminpanel' => 'Admin paneel',
         'addhomebanner' => 'Voeg home banner toe',
         'edithomebanner' => 'Bewerk home banner ',

@@ -5,6 +5,7 @@
         'privacy' => 'Privacy policy',
         'about' => 'About',
         'donations' => 'Donations',
+        'users' => 'Users',
         'adminpanel' => 'Admin panel',
         'addhomebanner' => 'Add home banner',
         'edithomebanner' => 'Edit home banner',

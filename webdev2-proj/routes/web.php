@@ -22,8 +22,8 @@ Route::group(['prefix' => '{language}'], function() {
     Route::post('/', 'MailController@store')->name('subscribe');
     
     Route::get('/donate', 'DonationsController@getIndex')->name('donate');
-    Route::post('/donate', 'DonationsController@preparePayment')->name('donate.pay'); // sending transaction
-    Route::any('/webhooks/mollie', 'WebhookController@handle')->name('webhooks.mollie'); // checking transaction?
+    Route::post('/donate', 'DonationsController@preparePayment')->name('donate.pay');
+    Route::any('/webhooks/mollie', 'WebhookController@handle')->name('webhooks.mollie');
     Route::get('/donate/succes', 'DonationsController@getSucces')->name('donationSuccess');
 
     Route::get('/contact', 'ContactController@getIndex')->name('contact');
@@ -62,8 +62,10 @@ Route::group(['prefix' => '{language}'], function() {
 
         Route::get('/donations', 'DonationsAdminController@getIndex')->name('donations.read');
 
-        Route::get('/register', 'MyRegisterController@getIndex')->name('adminregister');
-        Route::post('/register', 'MyRegisterController@getIndex')->name('adminregister');
+        Route::get('/users', 'Auth\RegisterController@getIndex')->name('users');
+        Route::get('/users/register', 'Auth\RegisterController@getRegister')->name('admin.register');
+        Route::post('/users/register', 'Auth\RegisterController@register')->name('saveAdmin.register');
+        Route::get('/users/destroy/{id}', 'Auth\RegisterController@destroy')->name('admin.destroy');
     });
     
 });

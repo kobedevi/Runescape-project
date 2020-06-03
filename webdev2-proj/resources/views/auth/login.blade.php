@@ -31,7 +31,7 @@
             <input type="submit" value="{{ __('Login') }}">
 
             @if (Route::has('password.request'))
-                <a class="btn btn-link" href="{{ route('password.request',  App()->getLocale()) }}">
+                <a class="btn btn-link" href="{{ route('password.request',  ['language' => App()->getLocale()]) }}">
                     {{ __('Forgot Your Password?') }}
                 </a>
             @endif
