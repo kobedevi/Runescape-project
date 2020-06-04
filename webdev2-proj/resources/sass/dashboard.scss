@@ -24,11 +24,15 @@ ul{
 }
 
 .sidenav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: $dark;
     color: $white;
     width: 250px;
     box-shadow:0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.85) ;
     ul{
+        margin: 0;
         padding: 0;
         li{
             padding: 10px;
@@ -44,6 +48,10 @@ ul{
             font-family: $text;
             text-decoration: none;
         }
+    }
+    ul.bottom{
+        border-top: 2px solid $lighter;
+        border-bottom: none;
     }
 }
 
