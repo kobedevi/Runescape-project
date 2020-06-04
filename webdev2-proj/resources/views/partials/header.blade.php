@@ -17,12 +17,6 @@
     <meta name="theme-color" content="#ffffff">  
 </head>
 
-<script>
-     
-
-
-</script>
-
 <body>
     
     {{-- alerts --}}
@@ -54,6 +48,9 @@
                     @if(!isset($id))
                         @php $id = null @endphp
                     @endif
+                    @if(!isset($token))
+                        @php $token = null @endphp
+                    @endif
 
                     {{-- saving page pagination page parameter when changing languages --}}
                     @if(isset($_GET['page']))
@@ -62,8 +59,8 @@
                         @php $page=null @endphp
                     @endif
 
-                    <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en', 'page' => $page, 'id' => $id ]) }}">EN</a></li>  
-                    <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'page' => $page, 'id' => $id ]) }}">NL</a></li>  
+                    <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en', 'page' => $page, 'id' => $id, 'token' => $token ]) }}">EN</a></li>  
+                    <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'page' => $page, 'id' => $id, 'token' => $token  ]) }}">NL</a></li>  
                     <li><a href="{{ route('donate', app()->getLocale() ) }}">{{ __('header.donate') }}</a></li>
                     <li><a href="{{ route('contact', app()->getLocale()) }}">{{ __('header.contact') }}</a></li>
                     @guest

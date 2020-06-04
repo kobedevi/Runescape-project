@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // default is en
 Route::redirect('/', '/en');
 
-Route::group(['prefix' => '{language}'], function() {
+Route::group(['prefix' => '{language?}'], function() { //needs to be optional for requesting reset password link 
     
     Route::get('/', 'StartController@getIndex')->name('start');
     Route::post('/', 'MailController@store')->name('subscribe');
@@ -35,9 +35,10 @@ Route::group(['prefix' => '{language}'], function() {
     Route::get('/privacy-policy', 'PrivaciesController@getIndex')->name('privacy');
     Route::get('/about', 'AboutsController@getIndex')->name('about');
 
-    
+    Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showReseterForm')->name('redirect.password.reset');
+    Route::post('/password/reset/', 'Auth\ResetPasswordController@reset')->name('password.update');
+
     Route::group(['prefix' => 'dashboard'], function() {
-        // Auth::routes(['verify' => true]);
         Auth::routes();
 
         Route::get('/', 'DashboardController@getIndex')->name('admin');
@@ -67,6 +68,8 @@ Route::group(['prefix' => '{language}'], function() {
         Route::post('/users/register', 'Auth\RegisterController@register')->name('saveAdmin.register');
         Route::get('/users/destroy/{id}', 'Auth\RegisterController@destroy')->name('admin.destroy');
     });
-    
 });
+
+Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@tester')->name('password.reset'); //redirect because default email doesn't support {langauge}
+
 

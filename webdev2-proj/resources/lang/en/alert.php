@@ -8,6 +8,10 @@
         'edit' => 'Changes published',
         'add' => 'Page published',
         'delete' => 'Page deleted',
+        'password' => "Passwords don't match",
+        'passwordChanged' => "Password changed",
+        'mail' => "Wrong Email",
+        'wrongCode' => "Wrong code",
         'error' => [
             'title' => 'Oh bugger!',
             'info' => "That particular combination of zeros and ones hasn't worked out...<br> Please head back to our homepage try again (sorry).",

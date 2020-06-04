@@ -18,7 +18,6 @@
         </div>
         @if($user->id != 1)
             <div class="buttons">
-                <a class="edit button" href="{{ route('homeBanner.edit', [app()->getLocale(), $user->id])}}">{{__('admin.edit')}}</a>
                 <a class="delete button" href="{{ route('admin.destroy', ['language' => app()->getLocale(), 'id' => $user->id]) }}">{{__('admin.delete')}}</a>  
             </div>
         @endif
