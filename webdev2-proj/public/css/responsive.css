@@ -419,96 +419,185 @@ form .currency input {
   padding-left: 25px;
 }
 
-form.contact {
-  width: 60%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-form.contact div {
-  width: 49%;
-  margin-bottom: 32px;
-}
-form.contact div input, form.contact div textarea {
-  width: 100%;
-}
-form.contact label {
-  display: flex;
-  margin-bottom: 8px;
-}
-form.contact input[type=submit] {
-  margin-top: 32px;
-}
+@media screen and (max-width: 1300px) {
+  .attention img {
+    min-height: 350px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+  }
+  .attention .title {
+    position: absolute;
+    height: calc(100% - 50px);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .attention .title h1 {
+    text-shadow: -2px 5px 8px #091013;
+    margin: 0;
+  }
 
-.donationcontainer {
-  margin-top: 128px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  footer p {
+    margin: 24px;
+  }
 }
+@media screen and (max-width: 950px) {
+  .splash img {
+    display: flex;
+    transform: scaleX(-1);
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    -o-object-position: 50% 50%;
+       object-position: 50% 50%;
+  }
+  .splash .left, .splash .right {
+    top: 0;
+    position: relative;
+    transform: unset;
+  }
+  .splash .left .container, .splash .right .container {
+    width: 100%;
+    color: #ECEDEE;
+    align-items: center;
+    background: url("/images/cracks.png") repeat-x center top -9.1875rem, url("/images/cracks.png") repeat-x center bottom -9.1875rem, #101D23;
+  }
+  .splash .left .text, .splash .right .text {
+    margin: calc(9.1875rem / 2) 0;
+    max-width: unset;
+    width: 100%;
+  }
+  .splash .left .text h2, .splash .right .text h2 {
+    margin: 0 0 24px 0;
+    color: #E1BB34;
+  }
+  .splash .left .text p, .splash .right .text p {
+    line-height: 24px;
+    margin: 0;
+  }
+  .splash .left .text::after, .splash .left .text::before, .splash .right .text::after, .splash .right .text::before {
+    content: " ";
+    display: block;
+    left: 0;
+    bottom: 0px;
+    position: absolute;
+    background: url(/images/thinborder.png);
+    width: 100%;
+    height: 5px;
+    z-index: 50;
+  }
+  .splash .left .text::before, .splash .right .text::before {
+    top: 0;
+    bottom: unset;
+  }
+}
+@media screen and (max-width: 740px) {
+  .attention .title h1 {
+    font-size: 72px;
+  }
 
-.donationblock {
-  font-family: Museo;
-  position: relative;
-  display: flex;
-  width: calc(50% - 16px);
-  flex-direction: row;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 30px 0px;
+  footer .container {
+    flex-direction: column;
+  }
+  footer .container p {
+    margin: 24px 0;
+  }
 }
-.donationblock h1 {
-  float: left;
-  white-space: nowrap;
-  min-width: 140px;
-  width: 50%;
-  margin: 0;
-  height: 100%;
-  font-family: Cinzel;
-  font-size: 32px;
-  display: flex;
-  align-items: center;
-}
-.donationblock h3 {
-  margin: 0;
-  color: #b2dbee;
-}
-.donationblock p, .donationblock i {
-  font-size: 14px;
-  color: #ECEDEE;
-}
-.donationblock .right {
-  display: flex;
-  height: 100%;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 50%;
-  float: right;
-  text-align: right;
-}
-.donationblock .right * {
-  width: 100%;
-}
-.donationblock::after {
-  content: " ";
-  height: 2px;
-  width: 100%;
-  position: absolute;
-  box-sizing: border-box;
-  bottom: 0;
-  border-top: 1px solid #203A46;
-  border-bottom: 1px solid #091013;
-}
+@media screen and (max-width: 640px) {
+  form.contact h1 {
+    margin: 22px 0;
+  }
 
-.donationblock:nth-of-type(1)::before, .donationblock:nth-of-type(2)::before {
-  content: " ";
-  height: 2px;
-  width: 100%;
-  position: absolute;
-  box-sizing: border-box;
-  top: 0;
-  border-top: 1px solid #203A46;
-  border-bottom: 1px solid #091013;
+  .attention .title h1 {
+    font-size: 42px;
+  }
+
+  .newsletter form input {
+    width: 100%;
+    padding: 12px 8px;
+  }
+
+  .newsletter form input[type=submit] {
+    margin-top: 24px;
+    padding: 10px 0;
+    width: 100%;
+    word-break: break-all;
+  }
+
+  .container.news a .newsblock {
+    flex-direction: column;
+    padding: 36px 0;
+  }
+  .container.news a .newsblock img {
+    width: 100%;
+    height: 140px;
+  }
+  .container.news a .newsblock article {
+    width: 100%;
+    max-width: unset;
+    margin: 0;
+  }
+  .container.news a .newsblock article i {
+    margin: 12px 0;
+  }
+  .container.news a .newsblock article .intro {
+    flex-wrap: wrap;
+  }
+  .container.news a .newsblock article .intro p {
+    -webkit-line-clamp: 3;
+    width: 100%;
+    max-width: unset;
+  }
+  .container.news a .newsblock article .intro span {
+    margin: 12px 0 0;
+  }
+  .container.news a .newsblock article * {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  form.contact, form#donate {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  form.contact > div, form.contact .together, form#donate > div, form#donate .together {
+    width: 100%;
+  }
+  form.contact input, form#donate input {
+    width: 100%;
+    padding: 12px 8px;
+  }
+  form.contact input[type=radio], form#donate input[type=radio] {
+    width: auto;
+  }
+
+  .donationblock {
+    width: 100%;
+    display: flex;
+  }
+  .donationblock h1 {
+    min-width: unset;
+    width: auto;
+  }
+  .donationblock .right {
+    flex: 1;
+  }
+  .donationblock:nth-of-type(1)::after {
+    all: unset;
+  }
+}
+@media screen and (max-width: 300px) {
+  * {
+    word-break: break-all;
+  }
+
+  #alert {
+    left: 10px;
+    transform: unset;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    word-break: normal;
+  }
 }

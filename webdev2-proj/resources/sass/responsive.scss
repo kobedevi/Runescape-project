@@ -1,0 +1,192 @@
+@import "app";
+
+@media screen and (max-width:1300px){
+
+    .attention{
+        img{
+            min-height: 350px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .title {
+            position: absolute;
+            height: calc(100% - 50px);
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h1{
+                text-shadow: -2px 5px 8px $black;
+                margin: 0;
+            }
+        }
+    }
+
+    footer p{
+        margin: 24px;
+    }
+
+}
+
+@media screen and (max-width:950px){
+    .splash {
+        img{
+            display: flex;
+            transform: scaleX(-1);
+            object-fit: cover;
+            width: 100%;
+            object-position: 50% 50%;
+        }
+        .left, .right{
+            top: 0;
+            position: relative;
+            transform: unset;
+            .container {
+                width: 100%;
+                color: $white;
+                align-items: center;
+                background: url("/images/cracks.png") repeat-x center top -9.1875rem,url("/images/cracks.png") repeat-x center bottom -9.1875rem, $dark;
+            }
+            .text{
+                margin: calc(9.1875rem / 2) 0;
+                max-width: unset;
+                width: 100%;
+                h2{
+                    margin:0 0 24px 0;
+                    color: $yellow;
+                }
+                p{
+                    line-height: 24px;
+                    margin: 0;
+                }
+                &::after, &::before{
+                    content: " ";
+                    display: block;
+                    left: 0;
+                    bottom: 0px;
+                    position: absolute;
+                    background: url(/images/thinborder.png);
+                    width: 100%;
+                    height: 5px;
+                    z-index: 50;
+                }
+                &::before{
+                    top:0;
+                    bottom: unset;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:740px){
+    .attention .title {
+        h1{
+            font-size: 72px;
+        }
+    }
+    footer .container{
+        flex-direction: column;
+        p{
+            margin: 24px 0;
+        }
+    }
+}
+
+@media screen and (max-width:640px){
+    form.contact h1{
+        margin: 22px 0;
+    }
+    .attention .title {
+        h1{
+            font-size: 42px;
+        }
+    }
+
+    .newsletter form input {
+        width: 100%;
+        padding: 12px 8px;
+    }
+    
+    .newsletter form input[type=submit]{
+        margin-top: 24px;
+        padding: 10px 0;
+        width: 100%;
+        word-break: break-all;
+    }
+
+    .container.news a .newsblock{
+        flex-direction: column;
+        padding: 36px 0;
+        img{
+            width: 100%;
+            height: 140px;
+        }
+        article{
+            width: 100%;
+            max-width: unset;
+            margin: 0;
+            i{
+                margin: 12px 0;
+            }
+            .intro{
+                flex-wrap: wrap;
+                p{
+                    -webkit-line-clamp: 3;
+                    width: 100%;
+                    max-width: unset;
+                }
+                span{
+                    margin: 12px 0 0;
+                }
+            }
+            *{
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+
+    form.contact, form#donate{
+        width: 100%;
+        margin-bottom: 24px;
+        >div, .together{
+            width: 100%;
+        }
+        input{
+            width: 100%;
+            padding: 12px 8px;
+        }
+        input[type=radio]{
+            width: auto;
+        }
+    }
+
+    .donationblock{
+        width: 100%;
+        display: flex;
+        h1{
+            min-width: unset;
+            width: auto;
+        }
+        .right{
+            flex: 1;
+        }
+        &:nth-of-type(1)::after{
+            all: unset;
+        }
+    }
+}
+
+@media screen and (max-width:300px){
+    *{
+        word-break: break-all;
+    }
+    #alert{
+        left: 10px;
+        transform: unset;
+        box-sizing: border-box;
+        width: calc(100% - 20px);
+        word-break: normal;
+    }
+}

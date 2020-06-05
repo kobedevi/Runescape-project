@@ -18,6 +18,7 @@ mix.sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/dashboard.scss', 'public/css')
     .sass('resources/sass/error.scss', 'public/css')
     .sass('resources/sass/users.scss', 'public/css')
+    .sass('resources/sass/responsive.scss', 'public/css')
     .options({
         processCssUrls: false
      });

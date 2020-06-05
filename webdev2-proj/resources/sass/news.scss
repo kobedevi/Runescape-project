@@ -132,6 +132,7 @@
         ul{
             display: flex;
             flex-direction: row;
+            justify-content: center;
             li {
                 font-family: $title;
                 margin: 5px;
@@ -155,6 +156,7 @@
 }
 .pagination {
     list-style: none;
+    flex-wrap: wrap;
     padding: 0;
     z-index: -1;
 }

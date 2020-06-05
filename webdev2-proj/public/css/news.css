@@ -284,7 +284,6 @@ nav a {
 }
 
 .right .text {
-  text-align: right;
   float: right;
 }
 
@@ -555,6 +554,7 @@ form .currency input {
 .pages nav ul {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .pages nav ul li {
   font-family: Cinzel;
@@ -577,6 +577,7 @@ form .currency input {
 
 .pagination {
   list-style: none;
+  flex-wrap: wrap;
   padding: 0;
   z-index: -1;
 }

@@ -4,5 +4,6 @@
     "/css/news.css": "/css/news.css",
     "/css/dashboard.css": "/css/dashboard.css",
     "/css/error.css": "/css/error.css",
-    "/css/users.css": "/css/users.css"
+    "/css/users.css": "/css/users.css",
+    "/css/responsive.css": "/css/responsive.css"
 }

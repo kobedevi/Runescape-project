@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <form action="{{ route('login', App()->getLocale()) }}" method="POST" class="contact">
+            <h1>{{ __('header.login') }}</h1>
             @csrf
             <div class="">
                 <label for="email">{{ __('E-Mail Address') }}<span class="required">*</span></label>

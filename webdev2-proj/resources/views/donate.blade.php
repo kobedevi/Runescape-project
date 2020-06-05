@@ -60,10 +60,7 @@
                             @else
                                 <i>{{ date('d F Y',  strtotime($donation->created_at)) }}</i>
                             @endif
-                        </div>
-                        
-
-                        <div class="intro"><p>{!! $donation->{'intro_'.App::getLocale()} !!}</p></div>
+                        </div>                        
                     </section>
                 @endforeach
                 
