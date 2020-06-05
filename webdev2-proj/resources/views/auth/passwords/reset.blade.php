@@ -2,13 +2,14 @@
 
 @section('content')
 <div class="container">
-    <form method="POST" class="action" action="{{ route('password.update', app()->getLocale()) }}">
+    <form method="POST" class="contact" action="{{ route('password.update', app()->getLocale()) }}">
         @csrf
+        <h1>{{ __('contact.reset') }}</h1>
         <input type="hidden" name="token" value="{{ $token }}">
-        <div>
-            <label for="email">{{ __('E-Mail Address') }}</label>
-            <div class="col-md-6">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+        <div class="row">
+            <label for="email">{{ __('contact.email') }}</label>
+            <div class="large">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $_GET['email'] ?? old('email') }}" required autocomplete="{{ $_GET['email'] ?? old('email') }}" autofocus>
 
                 @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -18,10 +19,10 @@
             </div>
         </div>
 
-        <div class="form-group row">
-            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+        <div class="row">
+            <label for="password">{{ __('contact.password') }}</label>
 
-            <div class="col-md-6">
+            <div class="large">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                 @error('password')
@@ -32,21 +33,17 @@
             </div>
         </div>
 
-        <div>
-            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+        <div class="row">
+            <label for="password-confirm">{{ __('contact.confirm') . " " . __('contact.password') }}</label>
 
-            <div>
+            <div class="large">
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
             </div>
         </div>
 
-        <div>
-            <div>
-                <button type="submit" class="btn btn-primary">
-                    {{ __('Reset Password') }}
-                </button>
-            </div>
-        </div>
+        <button type="submit" class="submit longButton">
+            {{ __('contact.resetPassword') }}
+        </button>
     </form>
 </div>
 @endsection

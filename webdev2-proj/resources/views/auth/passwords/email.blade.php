@@ -2,45 +2,34 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    @if (session('status'))
+    @endif
 
-                    <form method="POST" action="{{ route('password.email', ['language' => app()->getLocale()]) }}">
-                        @csrf
+    <form method="POST" class="contact" action="{{ route('password.email', ['language' => app()->getLocale()]) }}">
+        @csrf
+        <h1>{{ __('contact.forgot') }}</h1>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+        
+        <div class="row">
+            <label for="email">{{ __('contact.email') }}<span class="required">*</span></label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+            <div class="large">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                    name="email" value="{{ old('email') }}" placeholder="{{ __('contact.emailExample') }}" required autocomplete="email" autofocus>
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
                 </div>
             </div>
         </div>
-    </div>
+
+        <button type="submit" class="submit longButton">
+            {{ __('contact.passwordButton') }}
+        </button>
+    </form>
 </div>
 @endsection

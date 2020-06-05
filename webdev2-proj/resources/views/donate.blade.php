@@ -39,7 +39,7 @@
 
                     <div class="together large">
                         <label for="message">{{ __('donate.message') }}</label>
-                        <textarea name="message" maxlength="250"></textarea>
+                        <textarea name="message" maxlength="250" placeholder="{{__('donate.message')}}..."></textarea>
                     </div>
                     <input type="submit" value="{{ __('donate.donate') }}">
                 </form>

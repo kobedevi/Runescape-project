@@ -12,7 +12,8 @@ const mix = require('laravel-mix');
  */
 
 // mix.js('resources/js/app.js', 'public/js')
-mix.sass('resources/sass/app.scss', 'public/css')
+mix.sass('resources/sass/_variables.scss', 'public/css')
+    .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/contact.scss', 'public/css')
     .sass('resources/sass/news.scss', 'public/css')
     .sass('resources/sass/dashboard.scss', 'public/css')
@@ -21,4 +22,4 @@ mix.sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/responsive.scss', 'public/css')
     .options({
         processCssUrls: false
-     });
+    });

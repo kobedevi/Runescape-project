@@ -1,4 +1,4 @@
-<div class="sidenav">
+<div class="sidenav" id="sidenav">
     <ul>
         <a href="{{route('homeBanner', app()->getLocale())}}"><li>{{ __('admin.homebanner') }}</li></a>
         <a href="{{route('newsAdmin', app()->getLocale())}}"><li>{{ __('admin.news') }}</li></a>
@@ -11,3 +11,11 @@
         <a href="{{route('users', app()->getLocale())}}"><li>Users</li></a>
     </ul>
 </div>
+
+<script>
+    let button = document.getElementById('menu');
+    let menu = document.getElementById('sidenav');
+    button.addEventListener('click',function(){
+        menu.classList.toggle("show");
+    });
+</script>

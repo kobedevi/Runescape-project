@@ -6,12 +6,13 @@
         'email' => 'E-mail',
         'emailExample' => 'johndoe@example.com',
         'message' => 'Message',
-        'donation' => 'Donation',
-        'public' => 'Public',
-        'publication' => 'Make dontation public',
-        'private' => 'Private',
-        'donate' => 'Donate',
         'button' => 'Send',
+        'password' => 'Password',
+        'forgot' => 'Forgot your password?',
+        'reset' => 'Reset your password',
+        'remember' => 'Remember me',
+        'passwordButton' => 'Send password reset link',
+        'resetPassword' => 'Reset password',
+        'confirm' => 'Confirm',
     ]
-
 ?>

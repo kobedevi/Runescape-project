@@ -1,5 +1,5 @@
 //admin panel
-@import 'app';
+@import "_variables";
 
 ul{
     list-style: none;
@@ -171,6 +171,8 @@ form{
     >div{
         margin-bottom: 32px;
         .together{
+            width: 75%;
+            min-width: 650px;
             display: flex;
             flex-direction: column;
             margin: 12px 0 24px;

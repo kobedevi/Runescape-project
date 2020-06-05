@@ -6,8 +6,8 @@
             <h1>{{ __('header.login') }}</h1>
             @csrf
             <div class="">
-                <label for="email">{{ __('E-Mail Address') }}<span class="required">*</span></label>
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <label for="email">{{ __('contact.email') }}<span class="required">*</span></label>
+                <input id="email" type="email" placeholder="{{ __('contact.emailExample') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -15,7 +15,7 @@
                 @enderror
             </div>
             <div>
-                <label for="password">{{ __('Password') }}<span class="required">*</span></label>
+                <label for="password">{{ __('contact.password') }}<span class="required">*</span></label>
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                 @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -23,18 +23,23 @@
                     </span>
                 @enderror
             </div>
-            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+            <div class="row">
+                <div class="remember">
+                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+    
+                    <label class="form-check-label" for="remember">
+                        {{ __('contact.remember') }}
+                    </label>
+                </div>
+    
+                @if (Route::has('password.request'))
+                    <a class="forgot" href="{{ route('password.request',  ['language' => App()->getLocale()]) }}">
+                        {{ __('contact.forgot') }}
+                    </a>
+                @endif
+            </div>
 
-            <label class="form-check-label" for="remember">
-                {{ __('Remember Me') }}
-            </label>
-
-            <input type="submit" value="{{ __('Login') }}">
-            @if (Route::has('password.request'))
-                <a class="btn btn-link" href="{{ route('password.request',  ['language' => App()->getLocale()]) }}">
-                    {{ __('Forgot Your Password?') }}
-                </a>
-            @endif
+            <input type="submit" class="submit" value="{{ __('header.login') }}">
 
         </form>
     </div>

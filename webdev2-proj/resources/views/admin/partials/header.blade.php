@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Runescape mobile - admin panel</title>
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/contact.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/news.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/users.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ mix('/css/responsive.css') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/branding/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/branding/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/branding/favicon-16x16.png') }}">
@@ -19,8 +21,6 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-
-
 
     {{-- alerts --}}
     @if(session()->has('succes') || session()->has('danger'))
@@ -88,6 +88,9 @@
             <div class="container">
                 <ul>
                     <li class="logo" ><a href="{{ route('start', app()->getLocale()) }}">Runescape</a></li>
+                    <li class="menu" id="menu"><span></span>
+                    <span></span>
+                    <span></span></a></li>
                     <li><a href="{{ route('start', app()->getLocale()) }}">{{ __('header.home') }}</a></li>
                 </ul>
             </div>

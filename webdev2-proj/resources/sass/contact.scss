@@ -1,6 +1,6 @@
 // contact
 
-@import "app";
+@import "_variables";
 
 form.contact{
     width: 60%;
@@ -94,4 +94,66 @@ form.contact{
     top: 0;
     border-top: 1px solid $lighter;
     border-bottom: 1px solid $black;
+}
+
+form.contact {
+    .row{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+    }
+    .remember{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        input[type=checkbox]{
+            width: auto;
+        }
+    }
+    .forgot{
+        text-decoration: none;
+        color: $lightblue;
+        font-family: $text;
+    }
+}
+
+button{
+    box-shadow: unset;
+    width: 35%;
+    font-size: 24px;
+    padding: 0;
+    background: linear-gradient(-180deg, #e6b226 0%, #D87B19 100%);
+    font-family: $title;
+    color: $dark;
+    float: left;
+    border: 3px solid rgb(240, 208, 121);
+    border-right: 3px solid rgb(159, 64, 0);
+    border-bottom: 3px solid rgb(159, 64, 0);
+    cursor: pointer;
+}
+
+.longButton{
+    width: 50%;
+    min-width: 360px;
+}
+
+.row{
+    .large{
+        width: 100%;
+    }
+}
+
+.invalid-feedback, .alert-success{
+    float: left;
+    margin-top: 6px;
+    font-size: 12px;
+    font-family: $text;
+    color:#ff1d0d;
+}
+
+.alert-success{
+    color: #4CAF50;
 }

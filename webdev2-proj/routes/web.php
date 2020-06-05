@@ -70,6 +70,6 @@ Route::group(['prefix' => '{language?}'], function() { //needs to be optional fo
     });
 });
 
-Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@tester')->name('password.reset'); //redirect because default email doesn't support {langauge}
+Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@redirecting')->name('password.reset'); //redirect because default email doesn't support {langauge}
 
 

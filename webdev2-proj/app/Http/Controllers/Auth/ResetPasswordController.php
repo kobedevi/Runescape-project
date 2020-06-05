@@ -33,8 +33,8 @@ class ResetPasswordController extends Controller
     protected $redirectTo = RouteServiceProvider::HOME;
 
         
-    public function tester($token){
-        return redirect()->route('redirect.password.reset', ['language' => App()->getLocale(), 'token' => $token]);
+    public function redirecting($token){
+        return redirect()->route('redirect.password.reset', ['language' => App()->getLocale(), 'token' => $token, 'email' => $_GET['email']]);
     }
 
     public function showReseterForm($lang, $token = null)
@@ -63,7 +63,7 @@ class ResetPasswordController extends Controller
             }
         }
         else{
-            return redirect()->route('redirect.password.reset', ['language' => app()->getLocale(), 'token' => $r->token])->with('warning', trans('alert.password')); //passwords don't match
+            return redirect()->route('redirect.password.reset', ['language' => app()->getLocale(), 'token' => $r->token, 'email' => $_GET['email'] ])->with('warning', trans('alert.password')); //passwords don't match
         }
     }
 }

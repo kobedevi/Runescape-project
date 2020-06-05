@@ -1,4 +1,4 @@
-@import "app";
+@import "_variables";
 
 @media screen and (max-width:1300px){
 
@@ -7,6 +7,7 @@
             min-height: 350px;
             object-fit: cover;
             width: 100%;
+            min-width: 0;
         }
         .title {
             position: absolute;
@@ -24,6 +25,16 @@
 
     footer p{
         margin: 24px;
+    }
+
+    .admin{
+        .together{
+            width: 100%;
+            min-width: unset;
+        }
+        input[type=submit]{
+            width: 100%;
+        }
     }
 
 }
@@ -77,6 +88,29 @@
             }
         }
     }
+
+    .listitem{
+        padding: 20px 0;
+        flex-direction: column;
+        div:first-of-type{
+            flex-direction: column;
+            width: 100%;
+            img{
+                width: 100%;
+                max-width: unset;
+                height: 150px;
+            }
+        }
+        .buttons{
+            width: 100%;
+        }
+
+        p{
+            padding: 0;
+            width: 100%;
+        }
+    }
+
 }
 
 @media screen and (max-width:740px){
@@ -89,6 +123,16 @@
         flex-direction: column;
         p{
             margin: 24px 0;
+        }
+    }
+    .user .initial{
+        width: 100%;
+        padding: 6px 0;
+    }
+    .buttons{
+        width: 100%;
+        .button{
+            padding: 6px 0;
         }
     }
 }
@@ -176,11 +220,54 @@
             all: unset;
         }
     }
+
+    .longButton{
+        min-width: unset;
+        width: 100%;
+    }
+
+    header{
+        .menu{
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 22px;
+            position: absolute;
+            margin: 0;
+            transform: translate(0 -50%);
+            left: 50%;
+            span{
+                border-radius: 500px;
+                height: 3px;
+                width: 30px;
+                display: block;
+                background: $white;
+            }  
+        } 
+    }
+
+    .sidenav{
+        display: none;
+        width: 100%;
+        position: fixed;
+        z-index: 50;
+    }
+    .show{
+        display: block;
+    }
+
+    .add{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width:300px){
     *{
         word-break: break-all;
+    }
+    .logo a{
+        word-break: normal;
     }
     #alert{
         left: 10px;
