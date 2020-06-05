@@ -206,6 +206,10 @@
         }
     }
 
+    form#donate .currency input[type=number]{
+        padding-left: 25px;
+    }
+
     .donationblock{
         width: 100%;
         display: flex;
