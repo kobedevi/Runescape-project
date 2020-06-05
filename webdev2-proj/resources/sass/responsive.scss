@@ -264,6 +264,17 @@
     .add{
         width: 100%;
     }
+
+    .errorContainer{
+        height: 100%;
+        box-sizing: border-box;
+        overflow: visible;
+        padding: 12px;
+        min-height: 100vh;
+        .errorTitle{
+            font-size: 60px;
+        }
+    }
 }
 
 @media screen and (max-width:300px){
