@@ -7,6 +7,11 @@ use App\Donation;
 
 class DonationsAdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function getindex(){
         $donations = Donation::orderBy('id','DESC')->get();
 

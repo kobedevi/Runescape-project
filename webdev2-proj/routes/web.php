@@ -38,6 +38,7 @@ Route::group(['prefix' => '{language?}'], function() { //needs to be optional fo
     Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showReseterForm')->name('redirect.password.reset');
     Route::post('/password/reset/', 'Auth\ResetPasswordController@reset')->name('password.update');
 
+
     Route::group(['prefix' => 'dashboard'], function() {
         Auth::routes();
 
@@ -55,11 +56,11 @@ Route::group(['prefix' => '{language?}'], function() { //needs to be optional fo
         Route::get('/news/edit/{id}', 'NewsAdminController@edit')->name('newsAdmin.edit');
         Route::get('/news/destroy/{id}', 'NewsAdminController@destroy')->name('newsAdmin.destroy');
 
-        Route::get('/privacy/edit', 'PrivaciesController@edit')->name('privacy.edit');
-        Route::post('/privacy/save', 'PrivaciesController@save')->name('savePrivacy');
+        Route::get('/privacy/edit', 'PrivaciesAdminController@edit')->name('privacy.edit');
+        Route::post('/privacy/save', 'PrivaciesAdminController@save')->name('savePrivacy');
         
-        Route::get('/about/edit', 'AboutsController@edit')->name('about.edit');
-        Route::post('/about/save', 'AboutsController@save')->name('saveAbout');
+        Route::get('/about/edit', 'AboutsAdminController@edit')->name('about.edit');
+        Route::post('/about/save', 'AboutsAdminController@save')->name('saveAbout');
 
         Route::get('/donations', 'DonationsAdminController@getIndex')->name('donations.read');
 

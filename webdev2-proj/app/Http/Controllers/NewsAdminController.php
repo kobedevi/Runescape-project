@@ -7,6 +7,12 @@ use App\News;
 
 class NewsAdminController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function getIndex() {
         $posts = News::orderBy('id', 'DESC')->get();
 

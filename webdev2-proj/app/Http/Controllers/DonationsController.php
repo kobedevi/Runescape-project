@@ -9,7 +9,7 @@ use App\Donation;
 use App;
 
 class DonationsController extends Controller
-{
+{   
     public function getSucces(){
         return view('donateSucces');
     }
