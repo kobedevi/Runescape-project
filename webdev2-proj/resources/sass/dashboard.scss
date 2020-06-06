@@ -246,3 +246,39 @@ h4{
         }
     }
 }
+
+.preview{
+    display: block;
+    margin-top: 12px;
+    font-family: $text;
+    color: $white;
+}
+
+table {
+    *{
+        word-break: break-all;
+    }
+    font-family: $text;
+    border-collapse: collapse;
+    text-align: left;
+    color: $white;
+    width: 100%;
+    td,th{
+        border: 2px solid $lighter;
+        padding: 8px;
+    }
+    tr{
+        &:nth-child(even){
+            background-color: $dark;
+        }
+        &:hover{
+            background-color: $black;
+        }
+    }
+
+    th {
+        text-align: left;
+        background-color: $dark;
+        color: $white;
+    }
+}

@@ -66,6 +66,10 @@
     width: 100%;
   }
   .splash .left .text h2, .splash .right .text h2 {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
     margin: 0 0 24px 0;
     color: #E1BB34;
   }

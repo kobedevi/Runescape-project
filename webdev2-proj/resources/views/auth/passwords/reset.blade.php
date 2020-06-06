@@ -9,7 +9,7 @@
         <div class="row">
             <label for="email">{{ __('contact.email') }}</label>
             <div class="large">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $_GET['email'] ?? old('email') }}" required autocomplete="{{ $_GET['email'] ?? old('email') }}" autofocus>
+            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $_GET['email'] ?? old('email') }}" required autocomplete="{{ $_GET['email'] ?? old('email') }}" placeholder="{{ __('contact.emailExample')}}"autofocus>
 
                 @error('email')
                     <span class="invalid-feedback" role="alert">

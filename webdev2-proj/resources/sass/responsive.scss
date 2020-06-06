@@ -63,6 +63,10 @@
                 max-width: unset;
                 width: 100%;
                 h2{
+                    word-break: break-word;
+                    -webkit-hyphens: auto;
+                    -moz-hyphens: auto;
+                        hyphens: auto;
                     margin:0 0 24px 0;
                     color: $yellow;
                 }

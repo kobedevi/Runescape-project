@@ -13,9 +13,9 @@
         'mail' => "Verkeerd emailadres",
         'wrongCode' => "Verkeerde code",
         'error' => [
-            'title' => 'Ow, dit was niet de bedoeling!',
+            'title' => 'Ow, dees was niet de bedoeling!',
             'info' => "Die specifieke combinatie van nullen en enen is niet gelukt ... <br> Ga terug naar onze startpagina en probeer het opnieuw (sorry).",
-            'back' => "Breng me naar huis, ik ben de weg kwijt",
+            'back' => "Breng mij terug",
         ]
     ]
 

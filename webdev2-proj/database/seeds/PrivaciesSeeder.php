@@ -14,8 +14,8 @@ class PrivaciesSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         $privacy = new Privacy();
-        $privacy->text_en = $faker->realText();
-        $privacy->text_nl = $faker->realText();
+        $privacy->text_en = '<p>' . $faker->realText(1000) . '</p>';
+        $privacy->text_nl = '<p>' . $faker->realText(1000) . '</p>';
         $privacy->save();
     }
 }

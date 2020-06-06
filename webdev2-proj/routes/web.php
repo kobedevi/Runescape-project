@@ -20,6 +20,8 @@ Route::group(['prefix' => '{language?}'], function() { //needs to be optional fo
     
     Route::get('/', 'StartController@getIndex')->name('start');
     Route::post('/', 'MailController@store')->name('subscribe');
+
+    Route::get('/pages/{slug}', 'PagesController@getIndex')->name('pages.read');
     
     Route::get('/donate', 'DonationsController@getIndex')->name('donate');
     Route::post('/donate', 'DonationsController@preparePayment')->name('donate.pay');
@@ -30,7 +32,7 @@ Route::group(['prefix' => '{language?}'], function() { //needs to be optional fo
     Route::post('/contact', 'MailController@sendContact')->name('contact.save');
 
     Route::get('/news', 'NewsController@getIndex')->name('news');
-    Route::get('/news/{id}', 'NewsController@getDetail')->name('news.detail');   
+    Route::get('/news/{slug}', 'NewsController@getDetail')->name('news.detail');   
     
     Route::get('/privacy-policy', 'PrivaciesController@getIndex')->name('privacy');
     Route::get('/about', 'AboutsController@getIndex')->name('about');
@@ -46,23 +48,29 @@ Route::group(['prefix' => '{language?}'], function() { //needs to be optional fo
 
         Route::get('/homebanner', 'HomeBannerController@getIndex')->name('homeBanner');
         Route::get('/homebanner/add', 'HomeBannerController@add')->name('homeBanner.add');
-        Route::post('/homebanner/save', 'HomeBannerController@save')->name('saveHomeBanner');
+        Route::post('/homebanner/add', 'HomeBannerController@save')->name('saveHomeBanner');
         Route::get('/homebanner/edit/{id}', 'HomeBannerController@edit')->name('homeBanner.edit');
         Route::get('/homebanner/destroy/{id}', 'HomeBannerController@destroy')->name('homeBanner.destroy');
         
         Route::get('/news', 'NewsAdminController@getIndex')->name('newsAdmin');
         Route::get('/news/add', 'NewsAdminController@add')->name('newsAdmin.add');
-        Route::post('/news/save', 'NewsAdminController@save')->name('saveNewsAdmin');
+        Route::post('/news/add', 'NewsAdminController@save')->name('saveNewsAdmin');
         Route::get('/news/edit/{id}', 'NewsAdminController@edit')->name('newsAdmin.edit');
         Route::get('/news/destroy/{id}', 'NewsAdminController@destroy')->name('newsAdmin.destroy');
 
         Route::get('/privacy/edit', 'PrivaciesAdminController@edit')->name('privacy.edit');
-        Route::post('/privacy/save', 'PrivaciesAdminController@save')->name('savePrivacy');
+        Route::post('/privacy/edit', 'PrivaciesAdminController@save')->name('savePrivacy');
         
         Route::get('/about/edit', 'AboutsAdminController@edit')->name('about.edit');
-        Route::post('/about/save', 'AboutsAdminController@save')->name('saveAbout');
+        Route::post('/about/edit', 'AboutsAdminController@save')->name('saveAbout');
 
         Route::get('/donations', 'DonationsAdminController@getIndex')->name('donations.read');
+
+        Route::get('/pages', 'PagesAdminController@getIndex')->name('pages.index');
+        Route::get('/pages/create', 'PagesAdminController@getCreatePage')->name('pages.create');
+        Route::post('/pages/create', 'PagesAdminController@postCreatePage')->name('pages.save');
+        Route::get('/pages/edit/{id}', 'PagesAdminController@getEditPage')->name('pages.edit');
+        Route::get('/pages/destroy/{id}', 'PagesAdminController@destroyPage')->name('pages.destroy');
 
         Route::get('/users', 'Auth\RegisterController@getIndex')->name('users');
         Route::get('/users/register', 'Auth\RegisterController@getRegister')->name('admin.register');

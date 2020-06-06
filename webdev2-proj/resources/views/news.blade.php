@@ -6,7 +6,7 @@
             <main>
 
                 @foreach ($blogs as $blog)
-                        <a href="{{ route('news.detail', ['language' => App::getLocale(), 'id' => $blog->id ]) }}">
+                        <a href="{{ route('news.detail', ['language' => App::getLocale(), 'slug' => $blog->{'slug_'.App::getLocale()} ]) }}">
                         <section class="newsblock">
                             <img src="{{ asset('/images/news/'. $blog->image) }}">
                             <article>
@@ -23,7 +23,7 @@
 								<i>{{ date('d F Y',  strtotime($blog->created_at)) }}</i>
 							@endif
 							
-                                <div class="intro"><p>{!! $blog->{'intro_'.App::getLocale()} !!}</p><span>read more</span></div>
+                                <div class="intro"><p>{!! Str::limit($blog->{'intro_'.App::getLocale()}, 20) !!}</p><span>read more</span></div>
                             </article>
                         </section>
                     </a> 

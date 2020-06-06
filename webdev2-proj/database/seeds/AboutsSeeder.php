@@ -14,8 +14,8 @@ class AboutsSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         $abouts = new About();
-        $abouts->text_en = $faker->realText();
-        $abouts->text_nl = $faker->realText();
+        $abouts->text_en = '<p>' . $faker->realText(1000) . '</p>';
+        $abouts->text_nl = '<p>' . $faker->realText(1000) . '</p>';
         $abouts->save();
     }
 }

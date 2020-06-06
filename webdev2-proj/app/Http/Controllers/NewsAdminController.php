@@ -31,6 +31,7 @@ class NewsAdminController extends Controller
     public function save(Request $r) {
         $post = new News();
 
+        // dd($r);
         $post->title_en = $r->input('title_en');
         $post->intro_en = $r->input('intro_en');
         $post->text_en = $r->input('text_en');

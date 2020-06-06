@@ -46,9 +46,6 @@
             <div class="container">
                 <ul>
                     {{-- saving id parameters when changing languages --}}
-                    @if(!isset($id))
-                        @php $id = null @endphp
-                    @endif
                     @if(!isset($token))
                         @php $token = null @endphp
                     @endif
@@ -66,8 +63,12 @@
                         @php $email=null @endphp
                     @endif
 
-                    <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en', 'page' => $page, 'id' => $id, 'token' => $token, 'email' => $email ]) }}">EN</a></li>  
-                    <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'page' => $page, 'id' => $id, 'token' => $token, 'email' => $email ]) }}">NL</a></li>  
+                    @if(!isset($slug))
+                        @php $slug = null @endphp
+                    @endif
+
+                    <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en', 'page' => $page, 'token' => $token, 'email' => $email, 'slug' => $slug ]) }}">EN</a></li>  
+                    <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'page' => $page, 'token' => $token, 'email' => $email, 'slug' => $slug ]) }}">NL</a></li>  
                     <li><a href="{{ route('donate', app()->getLocale() ) }}">{{ __('header.donate') }}</a></li>
                     <li><a href="{{ route('contact', app()->getLocale()) }}">{{ __('header.contact') }}</a></li>
                     @guest

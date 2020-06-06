@@ -246,3 +246,36 @@ h4 {
   flex-direction: column;
   width: auto;
 }
+
+.preview {
+  display: block;
+  margin-top: 12px;
+  font-family: Museo;
+  color: #ECEDEE;
+}
+
+table {
+  font-family: Museo;
+  border-collapse: collapse;
+  text-align: left;
+  color: #ECEDEE;
+  width: 100%;
+}
+table * {
+  word-break: break-all;
+}
+table td, table th {
+  border: 2px solid #203A46;
+  padding: 8px;
+}
+table tr:nth-child(even) {
+  background-color: #101D23;
+}
+table tr:hover {
+  background-color: #091013;
+}
+table th {
+  text-align: left;
+  background-color: #101D23;
+  color: #ECEDEE;
+}
