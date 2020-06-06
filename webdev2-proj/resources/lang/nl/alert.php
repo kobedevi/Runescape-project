@@ -12,6 +12,7 @@
         'passwordChanged' => "Wachtwoord verandert",
         'mail' => "Verkeerd emailadres",
         'wrongCode' => "Verkeerde code",
+        'contactsent' => "Je e-mail is verzonden, we reageren zo snel mogelijk!",
         'error' => [
             'title' => 'Ow, dees was niet de bedoeling!',
             'info' => "Die specifieke combinatie van nullen en enen is niet gelukt ... <br> Ga terug naar onze startpagina en probeer het opnieuw (sorry).",

@@ -12,6 +12,7 @@
         'passwordChanged' => "Password changed",
         'mail' => "Wrong Email",
         'wrongCode' => "Wrong code",
+        'contactsent' => "You're email has been sent, we'll respond asap!",
         'error' => [
             'title' => 'Oh bugger!',
             'info' => "That particular combination of zeros and ones hasn't worked out...<br> Please head back to our homepage try again (sorry).",

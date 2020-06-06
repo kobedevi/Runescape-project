@@ -27,7 +27,7 @@ class MailController extends Controller
                 $message->subject('contact form');
             }); 
         }
-        return redirect()->route('start', $lang);
+        return redirect()->route('start', $lang)->with('succes', trans('alert.contactsent'));
     }
 
     public function store(Request $request) {

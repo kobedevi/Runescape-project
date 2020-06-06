@@ -263,6 +263,7 @@ table {
     margin: 12px 0;
     h3{
         word-break: all;
+        margin-top:0;
     }
     img{
         height: 100px;
@@ -289,4 +290,9 @@ table {
         background-color: $dark;
         color: $white;
     }
+
+    .buttons{
+        width: 20%;
+    }
+
 }

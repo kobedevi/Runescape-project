@@ -264,6 +264,7 @@ table {
 }
 table h3 {
   word-break: all;
+  margin-top: 0;
 }
 table img {
   height: 100px;
@@ -287,4 +288,7 @@ table th {
   text-align: left;
   background-color: #101D23;
   color: #ECEDEE;
+}
+table .buttons {
+  width: 20%;
 }

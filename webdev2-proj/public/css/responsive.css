@@ -214,6 +214,28 @@
     width: auto;
   }
 
+  table * {
+    box-sizing: border-box;
+  }
+  table tbody tr {
+    padding: 24px 0;
+  }
+  table tr {
+    flex-direction: column;
+    display: flex;
+  }
+  table tr img {
+    max-width: unset;
+  }
+  table tr td, table tr th {
+    display: block;
+    width: 100%;
+    border: 0;
+  }
+  table tr .buttons {
+    width: 100%;
+  }
+
   form#donate .currency input[type=number] {
     padding-left: 25px;
   }
@@ -284,15 +306,15 @@
   }
 }
 @media screen and (max-width: 400px) {
-  header nav ul {
+  header nav .regularnav {
     flex-wrap: wrap;
     justify-content: center;
   }
-  header nav ul li {
+  header nav .regularnav li {
     margin: 0 12px 12px;
   }
 
-  header nav li.logo {
+  header nav .regularnav li.logo {
     display: flex;
     justify-content: center;
     position: relative;
