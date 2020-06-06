@@ -137,6 +137,14 @@
   .buttons .button {
     padding: 6px 0;
   }
+
+  table {
+    word-break: break-all;
+  }
+
+  td {
+    width: calc(100% / 3);
+  }
 }
 @media screen and (max-width: 640px) {
   form.contact h1 {

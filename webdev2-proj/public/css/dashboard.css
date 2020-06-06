@@ -261,8 +261,16 @@ table {
   color: #ECEDEE;
   width: 100%;
 }
-table * {
-  word-break: break-all;
+table h3 {
+  word-break: all;
+}
+table img {
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  min-width: unset;
+  max-width: 250px;
 }
 table td, table th {
   border: 2px solid #203A46;

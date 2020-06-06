@@ -255,14 +255,21 @@ h4{
 }
 
 table {
-    *{
-        word-break: break-all;
-    }
     font-family: $text;
     border-collapse: collapse;
     text-align: left;
     color: $white;
     width: 100%;
+    h3{
+        word-break: all;
+    }
+    img{
+        height: 100px;
+        object-fit: cover;
+        width: 100%;
+        min-width: unset;
+        max-width: 250px;     
+    }
     td,th{
         border: 2px solid $lighter;
         padding: 8px;
