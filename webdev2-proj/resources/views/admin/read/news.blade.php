@@ -1,6 +1,8 @@
 @extends('admin.layout')
 
 @section('content')
+<h1>{{ __('admin.news') }}</h1>
+
 <table>
     <thead>
         <tr>
@@ -20,8 +22,8 @@
                 </td>
                 <td class="intro">{{ Str::limit($post->{'intro_'.App::getLocale()}, 200) }}</td>
                 <td class="buttons">
-                    <a class="edit button" href="{{ route('pages.edit', [app()->getLocale(), $post->id])}}">{{__('admin.edit')}}</a>
-                    <a class="delete button" href="{{ route('pages.destroy', ['language' => app()->getLocale(), 'id' => $post->id]) }}">{{__('admin.delete')}}</a>  
+                    <a class="edit button" href="{{ route('newsAdmin.edit', [app()->getLocale(), $post->id])}}">{{__('admin.edit')}}</a>
+                    <a class="delete button" href="{{ route('newsAdmin.destroy', ['language' => app()->getLocale(), 'id' => $post->id]) }}">{{__('admin.delete')}}</a>  
                 </td>
             </tr>
         @endforeach
