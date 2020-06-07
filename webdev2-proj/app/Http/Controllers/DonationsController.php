@@ -32,7 +32,7 @@ class DonationsController extends Controller
                 "value" => $value
             ],
             "description" => "Runescape Mobile donation",
-            "webhookUrl" => route('webhooks.mollie', ['language' => App::getLocale()]),
+            "webhookUrl" => route('webhooks.mollie'),
             "redirectUrl" => route('donationSuccess', App::getLocale()),
             "metadata" => [
                 "publication" => $r->publication,

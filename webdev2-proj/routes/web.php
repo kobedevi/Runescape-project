@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 // default is en
 Route::redirect('/', '/en');
+Route::any('/webhooks/mollie', 'WebhookController@handle')->name('webhooks.mollie');
+
 
 Route::group(['prefix' => '{language?}'], function() { //needs to be optional for requesting reset password link 
     
@@ -25,7 +27,6 @@ Route::group(['prefix' => '{language?}'], function() { //needs to be optional fo
     
     Route::get('/donate', 'DonationsController@getIndex')->name('donate');
     Route::post('/donate', 'DonationsController@preparePayment')->name('donate.pay');
-    Route::any('/webhooks/mollie', 'WebhookController@handle')->name('webhooks.mollie');
     Route::get('/donate/succes', 'DonationsController@getSucces')->name('donationSuccess');
 
     Route::get('/contact', 'ContactController@getIndex')->name('contact');

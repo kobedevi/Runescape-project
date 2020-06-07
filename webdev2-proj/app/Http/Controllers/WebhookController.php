@@ -9,7 +9,7 @@ use App\Donation;
 
 class WebhookController extends Controller
 {
-    public function handle(Request $r, $lang) {
+    public function handle(Request $r) {
         if (! $r->has('id')) {
             return;
         }
