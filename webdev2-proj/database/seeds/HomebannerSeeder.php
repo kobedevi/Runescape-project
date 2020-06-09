@@ -36,7 +36,7 @@ class HomebannerSeeder extends Seeder
         $banner->position = 'l';
         $banner->color = 'd';
         $banner->title_en = "WE WANT TO HEAR FROM YOU";
-        $banner->title_nl = 'ROELAND ZIT IN DE SCHADUW';
+        $banner->title_nl = 'WE WILLEN VAN JOU HOREN';
         $banner->text_en = "<p>Members who play RuneScape Mobile Early Access will be grandly rewarded with the exclusive Mobile Founder's Pack! It includes a Steel Panther Combat Pet, a unique rest animation and the dazzling Radiant Dawn Armour, so you'll look sensational as you're saving the world.</p>";
         $banner->text_nl = "<p>Leden die RuneScape Mobile Early Access spelen, worden beloond met het exclusieve Mobile Founder's Pack! Het bevat een Steel Panther Combat Pet, een unieke rustanimatie en het oogverblindende Radiant Dawn Armor, zodat je er sensationeel uitziet terwijl je de wereld redt.</p>";
         $banner->image = "sec3.jpg";

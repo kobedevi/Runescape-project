@@ -3,6 +3,9 @@
 @section('content')
 <h1>{{ __('admin.news') }}</h1>
 
+<a class="add button" href="{{ route('newsAdmin.add', app()->getLocale())}}">{{__('admin.add')}}</a>
+
+
 <table>
     <thead>
         <tr>

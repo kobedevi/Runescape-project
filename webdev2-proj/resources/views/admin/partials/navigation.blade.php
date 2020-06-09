@@ -8,6 +8,7 @@
         
     </ul>
     <ul class="bottom">
+        <a href="{{route('newsletter.index', app()->getLocale())}}"><li>{{ __('admin.newsletter') }}</li></a>
         <a href="{{route('donations.read', app()->getLocale())}}"><li>{{ __('admin.donations') }}</li></a>
         <a href="{{route('users', app()->getLocale())}}"><li>Users</li></a>
     </ul>

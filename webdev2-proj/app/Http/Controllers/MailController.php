@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Spatie\Newsletter\NewsletterFacade as Newsletter;
 use App;
+use App\Newsletter as Key;
 
 class MailController extends Controller
 {
@@ -31,6 +32,10 @@ class MailController extends Controller
     }
 
     public function store(Request $request) {
+        // set active api key
+        $key = Key::where('active', "1")->pluck('key');
+        config()->set(['newsletter.apiKey' => $key[0]]);
+
         if ( ! Newsletter::isSubscribed($request->user_email) ) {
             Newsletter::subscribePending($request->user_email);
             return redirect('/'.App::getLocale()."#newsletter")->with('succes', trans('alert.subscribe'));

@@ -14,7 +14,7 @@ return [
      * https://us10.admin.mailchimp.com/account/api-key-popup/.
      */
     'apiKey' => env('MAILCHIMP_APIKEY'),
-
+    // 'apiKey' => $test,
     /*
      * The listName to use when no listName has been specified in a method.
      */

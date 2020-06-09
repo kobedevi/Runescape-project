@@ -73,6 +73,13 @@ Route::group(['prefix' => '{language?}'], function() { //needs to be optional fo
         Route::get('/pages/edit/{id}', 'PagesAdminController@getEditPage')->name('pages.edit');
         Route::get('/pages/destroy/{id}', 'PagesAdminController@destroyPage')->name('pages.destroy');
 
+        Route::get('/newsletter', 'NewsletterAdminController@getIndex')->name('newsletter.index');
+        Route::post('/newsletter', 'NewsletterAdminController@update')->name('newsletter.update');
+        Route::get('/newsletter/create', 'NewsletterAdminController@create')->name('newsletter.create');
+        Route::post('/newsletter/create', 'NewsletterAdminController@save')->name('newsletter.save');
+        Route::get('/newsletter/edit/{id}', 'NewsletterAdminController@edit')->name('newsletter.edit');
+        Route::get('/newsletter/destroy/{id}', 'NewsletterAdminController@destroy')->name('newsletter.destroy');
+
         Route::get('/users', 'Auth\RegisterController@getIndex')->name('users');
         Route::get('/users/register', 'Auth\RegisterController@getRegister')->name('admin.register');
         Route::post('/users/register', 'Auth\RegisterController@register')->name('saveAdmin.register');
@@ -81,5 +88,3 @@ Route::group(['prefix' => '{language?}'], function() { //needs to be optional fo
 });
 
 Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@redirecting')->name('password.reset'); //redirect because default email doesn't support {langauge}
-
-

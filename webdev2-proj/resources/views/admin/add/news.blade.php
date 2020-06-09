@@ -45,6 +45,6 @@
             </div>
         </div>
 
-        <input type="submit" value="{{ __('admin.form.submit')}}">
+        <input type="submit" value="{{ __('admin.add')}}">
     </form>
 @endsection

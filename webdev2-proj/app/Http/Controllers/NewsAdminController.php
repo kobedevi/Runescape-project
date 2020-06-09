@@ -62,7 +62,7 @@ class NewsAdminController extends Controller
     }
     
     public function destroy($language, $id) {
-        News::find($id)->delete();
+        News::findOrFail($id)->delete();
         return redirect()->route('newsAdmin', app()->getLocale())->with('danger', trans('alert.delete'));
     }
 }

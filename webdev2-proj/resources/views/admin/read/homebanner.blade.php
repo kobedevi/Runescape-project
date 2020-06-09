@@ -3,6 +3,7 @@
 @section('content')
 <h1>{{ __('admin.homebanner') }}</h1>
 
+<a class="add button" href="{{ route('homeBanner.add', app()->getLocale())}}">{{__('admin.add')}}</a>
 <table>
     <thead>
         <tr>

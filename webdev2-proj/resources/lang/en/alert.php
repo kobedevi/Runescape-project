@@ -17,6 +17,7 @@
             'title' => 'Oh bugger!',
             'info' => "That particular combination of zeros and ones hasn't worked out...<br> Please head back to our homepage try again (sorry).",
             'back' => "Take me home, I'm drunk",
+            'no' => "You can't do that",
         ]
     ]
 
