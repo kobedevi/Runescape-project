@@ -13,7 +13,9 @@
         'edithomebanner' => 'Bewerk home banner ',
         'addpage' => 'Pagina toevoegen', 
         'addnews' => 'Voeg nieuws post toe',
+        'editprivacy' => 'Bewerk privacybeleid', 
         'editnews' => 'Bewerk nieuws post',
+        'adduser' => 'Gebruiker toevoegen', 
         'editabout' => 'Bewerk over ons',
         'editpages' => 'Bewerk pagina\'s',
         'activeKey' => 'Zet als actieve API key', 
@@ -21,6 +23,7 @@
         'edit' => 'Bewerken',
         'delete' => 'Verwijderen',
         'form' => [
+            'active' => 'Actief',
             'textPos' =>'Selecteer waar uw tekst moet zijn',
             'pos' =>'Positie',
             'pos1' =>'Links',

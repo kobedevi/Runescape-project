@@ -7,8 +7,8 @@
     <table>
         <thead>
             <tr>
-                <th>Titel</th>
-                <th>Intro</th>
+                <th>{{__('admin.form.title')}}</th>
+                <th>{{__('admin.form.intro')}}</th>
                 <th></th>
             </tr>
         </thead>

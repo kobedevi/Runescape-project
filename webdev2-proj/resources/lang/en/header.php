@@ -4,7 +4,7 @@
         'contact' => 'Contact',
         'login' => 'Login',
         'logout' => 'Logout',
-        'admin' => 'Dasboard',
+        'admin' => 'Dashboard',
         'home' => 'Home',
         'news' => 'News',
         'about' => 'About',

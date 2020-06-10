@@ -8,7 +8,11 @@
             <div class="donation">
                 <div class="titles">
                     <h3>{{ $donation->name }}</h3>
-                    <h4>{{ $donation->public }}</h4>
+                    @if ( $donation->public == 'public')
+                        <h4>{{__('donate.public')}}</h4>
+                    @else
+                        <h4>{{__('donate.private')}}</h4>
+                    @endif
                 </div>
                 <div class="donationText">
                     <p class="full">{{ $donation->message }}</p>

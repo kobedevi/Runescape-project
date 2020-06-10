@@ -15,6 +15,7 @@
         'editnews' => 'Edit newspost', 
         'editprivacy' => 'Edit privacy policy', 
         'addpage' => 'Add page', 
+        'adduser' => 'Add user', 
         'editabout' => 'Edit about', 
         'editpages' => 'Edit pages', 
         'activeKey' => 'Set as active API key', 
@@ -22,6 +23,7 @@
         'edit' => 'Edit',
         'delete' => 'Delete',
         'form' => [
+            'active' => 'Active',
             'textPos' =>'Please select where your text should be',
             'pos' =>'Position',
             'pos1' =>'Left',
@@ -46,5 +48,4 @@
             'submit' =>'Submit',
         ]
     ]
-
 ?>

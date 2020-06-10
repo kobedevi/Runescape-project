@@ -9,7 +9,7 @@
         <thead>
             <tr>
                 <th>API key</th>
-                <th>active</th>
+                <th>{{__('admin.form.active')}}</th>
                 <th></th>
             </tr>
         </thead>
