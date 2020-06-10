@@ -69,7 +69,7 @@
                     @if(!isset($slug))
                         @php $slug = null @endphp
                     @endif
-                    {{-- Sorry, kwist ni hoe ik het anders kon fixen 🙃 --}}
+                    {{-- Sorry, kwist ni hoe ik het anders kon fixen 🙃--}}
 
                     <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en', 'page' => $page, 'token' => $token, 'email' => $email, 'slug' => $slug ]) }}">EN</a></li>  
                     <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'page' => $page, 'token' => $token, 'email' => $email, 'slug' => $slug ]) }}">NL</a></li>  

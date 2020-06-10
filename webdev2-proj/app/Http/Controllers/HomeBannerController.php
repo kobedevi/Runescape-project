@@ -52,7 +52,7 @@ class HomeBannerController extends Controller
         } elseif($r->id) {
             // if there's already an image, skip and use the old image
         } else {
-            return "not a valid image!";
+            return redirect()->route('homeBanner', app()->getLocale())->with('warning', trans('alert.image'));
         }
 
         // if the user is editing an existing banner do this

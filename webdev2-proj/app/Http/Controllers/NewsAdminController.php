@@ -41,6 +41,8 @@ class NewsAdminController extends Controller
         $post->title_nl = $r->input('title_nl');
         $post->intro_nl = $r->input('intro_nl');
         $post->text_nl = $r->input('text_nl');
+        $post->slug_en = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $post->title_en)));
+        $post->slug_nl = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $post->title_nl)));
 
         // imagestuffsels
         if($r->hasfile('image')) {
@@ -53,7 +55,7 @@ class NewsAdminController extends Controller
             // if it's an existing post and there's no new image, use the old one
         } else {
             // return this if the user didn't use a valid image
-            return "not a valid image!";
+            return redirect()->route('newsAdmin', app()->getLocale())->with('warning', trans('alert.image'));
         }
 
         // if the user is editing an existing newspost update it

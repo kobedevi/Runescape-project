@@ -15,6 +15,7 @@
         'contactsent' => "Je e-mail is verzonden, we reageren zo snel mogelijk!",
         'error' => [
             'title' => 'Ow, dees was niet de bedoeling!',
+            'image' => 'Ongeldige afbeelding',
             'info' => "Die specifieke combinatie van nullen en enen is niet gelukt ... <br> Ga terug naar onze startpagina en probeer het opnieuw (sorry).",
             'back' => "Breng mij terug",
             'no' => "Je kunt dat niet doen",

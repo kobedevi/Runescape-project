@@ -15,6 +15,7 @@
         'contactsent' => "You're email has been sent, we'll respond asap!",
         'error' => [
             'title' => 'Oh bugger!',
+            'image' => 'Not a valid image',
             'info' => "That particular combination of zeros and ones hasn't worked out...<br> Please head back to our homepage try again (sorry).",
             'back' => "Take me home, I'm drunk",
             'no' => "You can't do that",
