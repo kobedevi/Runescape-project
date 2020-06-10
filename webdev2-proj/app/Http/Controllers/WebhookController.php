@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Mollie\Laravel\Facades\Mollie;
+use Illuminate\Support\Facades\Mail;
 use App\Donation;
 
 class WebhookController extends Controller
@@ -16,7 +17,7 @@ class WebhookController extends Controller
 
         $payment = Mollie::api()->payments()->get($r->id);
 
-        // if donation gets tag "PAID" add it to the database
+        // if donation is paid add it to the database
         if ($payment->isPaid()) {
             $donation = new Donation;
             $donation->public = $payment->metadata->publication;
@@ -25,7 +26,7 @@ class WebhookController extends Controller
             $donation->message = $payment->metadata->message;
             $donation->amount = $payment->amount->value;
 
-            $donation->save();
+            $donation->save(); 
         } else {
             return;
         }

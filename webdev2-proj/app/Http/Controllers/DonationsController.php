@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mollie\Laravel\Facades\Mollie;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use App\Donation;
 use App;
 
@@ -45,7 +46,24 @@ class DonationsController extends Controller
                 "message" => $r->message,
             ],
         ]);
-        $payment = Mollie::api()->payments->get($payment->id);            
+        $payment = Mollie::api()->payments->get($payment->id);
+        
+        // send email 
+        if(app()->getLocale() == 'nl'){
+            Mail::send('mails.donationnl', compact('r'), function ($message) use($r) {
+                $message->sender('kobedevi@student.arteveldehs.be', 'Kobe Devillé');
+                $message->to($r->email, $r->name);
+                $message->cc('kobedevi@student.arteveldehs.be', 'Kobe Devillé');
+                $message->subject('Donation Runescape');
+            });         
+        }else {
+            Mail::send('mails.donationen', compact('r'), function ($message) use($r) {
+                $message->sender('kobedevi@student.arteveldehs.be', 'Kobe Devillé');
+                $message->to($r->email, $r->name);
+                $message->cc('kobedevi@student.arteveldehs.be', 'Kobe Devillé');
+                $message->subject('Donation Runescape');
+            });
+        }
         return redirect($payment->getCheckoutUrl(), 303);
     }
 }
