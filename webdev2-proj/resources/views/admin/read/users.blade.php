@@ -9,6 +9,7 @@
         <div class="initial">{{substr($user->name, 0,1)}}</div>
         <div class="infocollection">
             <div class="name">
+                {{-- if user id == 1 mark it as "superuser" --}}
                 <p class="listinfo"><strong>{{$user->name}}</strong><span class="role">@if($user->id == 1) Superuser @endif</span></p>
             </div>
             <div class="userinfo">
@@ -16,6 +17,8 @@
                 <p class="listinfo"><span class="prefix">{{ __('users.createdAt')}}: </span>{{date('d F Y',  strtotime($user->created_at))}}</p>
             </div>
         </div>
+
+        {{-- if user id != 1 give it a delete button --}}
         @if($user->id != 1)
             <div class="buttons">
                 <a class="delete button" href="{{ route('admin.destroy', ['language' => app()->getLocale(), 'id' => $user->id]) }}">{{__('admin.delete')}}</a>  

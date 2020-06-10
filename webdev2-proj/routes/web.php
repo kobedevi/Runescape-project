@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/en');
 Route::any('/webhooks/mollie', 'WebhookController@handle')->name('webhooks.mollie');
 
-
+// everything with prefix {language}
 Route::group(['prefix' => '{language?}'], function() { //needs to be optional for requesting reset password link 
     
     Route::get('/', 'StartController@getIndex')->name('start');
@@ -41,7 +41,7 @@ Route::group(['prefix' => '{language?}'], function() { //needs to be optional fo
     Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showReseterForm')->name('redirect.password.reset');
     Route::post('/password/reset/', 'Auth\ResetPasswordController@reset')->name('password.update');
 
-
+    // prefixed everything admin with "dashboard"
     Route::group(['prefix' => 'dashboard'], function() {
         Auth::routes();
 

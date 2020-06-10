@@ -44,7 +44,7 @@
 
 
 
-
+    {{-- convert textareas to tinymce inputs --}}
     <script>
         tinymce.init({
             selector: 'textarea',
@@ -59,20 +59,15 @@
             <div class="container">
                 <ul>
 
-                    {{-- saving id parameters when changing languages --}}
+                    {{-- saving possible id parameter when changing languages --}}
                     @if(!isset($id))
                         @php $id = null @endphp
-                    @endif
-
-                    @if(isset($banner->id))
-                        <?php $banner = $banner->id ?>
-                    @else
-                        <?php $banner = null ?>
                     @endif
 
                     <li class="lang"><a @if(App::getLocale() == 'en') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'en', 'id' => $id]) }}">EN</a></li>  
                     <li class="lang"><a @if(App::getLocale() == 'nl') class="active" @endif href="{{ route(Route::currentRouteName(), ['language' => 'nl', 'id' => $id]) }}">NL</a></li>  
                     <li role="menuitem">
+                        {{-- logout --}}
                         <a style='' href="{{ route('logout', app()->getLocale()) }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                             {{ __('header.logout') }}

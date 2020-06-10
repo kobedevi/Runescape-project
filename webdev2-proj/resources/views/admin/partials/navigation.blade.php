@@ -1,3 +1,4 @@
+{{-- admin side navigation --}}
 <div class="sidenav" id="sidenav">
     <ul>
         <a href="{{route('homeBanner', app()->getLocale())}}"><li>{{ __('admin.homebanner') }}</li></a>
@@ -14,6 +15,7 @@
     </ul>
 </div>
 
+{{-- when converted to dropdown toggle open/close onclick --}}
 <script>
     let button = document.getElementById('menu');
     let menu = document.getElementById('sidenav');

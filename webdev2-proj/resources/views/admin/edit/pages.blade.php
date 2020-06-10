@@ -45,6 +45,7 @@
                 <label for="active0">{{ __('admin.form.publish1') }}</label><br>
                 <input type="radio" id="active1" name="active" value="1" {{ $post->active==1 ? 'checked' : ''}}>
                 <label for="active1">{{ __('admin.form.publish2') }}</label><br>
+                {{-- give a "preview" link to page if page is active (possibility for user to easily grab the link and post in article) --}}
                 @if($post->active==1)
                     <a class="preview" href="{{ route('pages.read', ['language' => app()->getLocale(), 'slug' => $post->{'slug_'.App::getLocale()}]) }}" target="_blank">Preview</a> 
                 @endif

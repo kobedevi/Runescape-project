@@ -6,7 +6,6 @@
         @csrf
         <div>
             <h2>{{ __('admin.form.lang1') . ':' }}</h2>
-            {{-- {{dd($post)}} --}}
             <div class="together">
                 <label for="text_en">{{ __('admin.form.lang1_1') .' '. __('admin.form.text') }}</label>
                 <textarea name="text_en">{{ old('text_en', ($post ? $post->text_en : '')) }}</textarea>
