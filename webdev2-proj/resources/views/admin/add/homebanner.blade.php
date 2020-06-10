@@ -30,7 +30,7 @@
             <h2>{{ __('admin.form.lang1') . ':' }}</h2>
             <div class="together">
                 <label for="title_en">{{ __('admin.form.lang1') .' '. __('admin.form.title') }}<span class="required">*</span></label>
-            <input type="text" name="title_en" placeholder="{{__('admin.form.title')}}"required>
+                <input maxlength = "80" type="text" name="title_en" placeholder="{{__('admin.form.title')}}"required>
             </div>
             <div class="together">
                 <label for="text_en">{{ __('admin.form.lang1') .' '. __('admin.form.text') }}<span class="required">*</span></label>
@@ -42,7 +42,7 @@
             <h2>{{ __('admin.form.lang2') . ':' }}</h2>
             <div class="together">
                 <label for="title_nl">{{ __('admin.form.lang2') .' '. __('admin.form.title') }}<span class="required">*</span></label>
-                <input type="text" name="title_nl" placeholder="{{__('admin.form.title')}}" required>
+                <input maxlength = "80" type="text" name="title_nl" placeholder="{{__('admin.form.title')}}" required>
             </div>
             <div class="together">
                 <label for="text_nl">{{ __('admin.form.lang2') .' '. __('admin.form.text') }}<span class="required">*</span></label>

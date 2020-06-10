@@ -30,7 +30,7 @@
             <h2>{{ __('admin.form.lang1') . ':' }}</h2>
             <div class="together">
                 <label for="title_en">{{ __('admin.form.lang1_1') .' '. __('admin.form.title') }}</label>
-                <input type="text" name="title_en" placeholder="{{__('admin.form.title')}}" value="{{ old('title_en', ($banner ? $banner->title_en : '')) }}">
+                <input maxlength = "80" type="text" name="title_en" placeholder="{{__('admin.form.title')}}" value="{{ old('title_en', ($banner ? $banner->title_en : '')) }}">
             </div>
             <div class="together">
                 <label for="text_en">{{ __('admin.form.lang1_1') .' '. __('admin.form.text') }}</label>
@@ -42,7 +42,7 @@
             <h2>{{ __('admin.form.lang2') . ':' }}</h2>
             <div class="together">
                 <label for="title_nl">{{ __('admin.form.lang2_1') .' '. __('admin.form.title') }}</label>
-                <input type="text" name="title_nl" placeholder="{{__('admin.form.title')}}" value="{{ old('title_nl', ($banner ? $banner->title_nl : '')) }}">
+                <input maxlength = "80" type="text" name="title_nl" placeholder="{{__('admin.form.title')}}" value="{{ old('title_nl', ($banner ? $banner->title_nl : '')) }}">
             </div>
             <div class="together">
                 <label for="text_nl">{{ __('admin.form.lang2_1') .' '. __('admin.form.text') }}</label>
