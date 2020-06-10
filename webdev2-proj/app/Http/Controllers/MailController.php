@@ -12,6 +12,7 @@ class MailController extends Controller
 {
     public function sendContact(Request $r){
 
+        // what mail to send 
         $lang = app()->getLocale();
         if($lang == 'nl') {
             Mail::send('mails.contactnl', compact('r'), function ($message) use($r) {
@@ -32,10 +33,11 @@ class MailController extends Controller
     }
 
     public function store(Request $request) {
-        // set active api key
+        // set currently active api key
         $key = Key::where('active', "1")->pluck('key');
         config()->set(['newsletter.apiKey' => $key[0]]);
 
+        // check if user is already subscribed 
         if ( ! Newsletter::isSubscribed($request->user_email) ) {
             Newsletter::subscribePending($request->user_email);
             return redirect('/'.App::getLocale()."#newsletter")->with('succes', trans('alert.subscribe'));

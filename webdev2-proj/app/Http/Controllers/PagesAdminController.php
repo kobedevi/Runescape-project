@@ -14,6 +14,7 @@ class PagesAdminController extends Controller
     }
 
     public function getIndex(){
+        // get all pages
         $posts = Page::orderBy('id', 'DESC')->get();
         return view('admin.read.pages', compact('posts'));
     }
@@ -22,9 +23,11 @@ class PagesAdminController extends Controller
         return view("admin.add.pages");
     }
 
-    public function postCreatePage(Request $r){        
+    public function postCreatePage(Request $r){  
+        // userdata   
         $post = new Page();
 
+        // remove spaces from title and replace them with "-"
         $post->slug_en = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $r->title_en)));
         $post->slug_nl = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $r->title_nl)));
         $post->title_en = $r->input('title_en');
@@ -35,12 +38,14 @@ class PagesAdminController extends Controller
         $post->text_nl = $r->input('text_nl');
         $post->active = $r->input('active');
 
+        // if it's an existing page, update this page
         if($r->id) {
             $post = $post->toArray();
             $update = Page::where('id', $r->id)->first();
             $update->update($post);
             return redirect()->route('pages.edit', ['language' => app()->getLocale(), 'id' => $r->id])->with('succes', trans('alert.edit'));
         } else {
+            // otherwise, create a new one
             $post->save();
             return redirect()->route('pages.index', app()->getLocale())->with('succes', trans('alert.add'));
         }

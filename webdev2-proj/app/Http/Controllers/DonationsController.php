@@ -15,8 +15,10 @@ class DonationsController extends Controller
     }
     
     public function getindex(){
+        // get all public donations 
         $donations = Donation::where('public', 'public')->orderBy('id','DESC')->paginate(20);
 
+        // array to translate month names
         $enmonths = array('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'); 
         $nlmonths = array('januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december');
 
@@ -25,7 +27,9 @@ class DonationsController extends Controller
     
     public function preparePayment(Request $r)
     {
+        // convert amount to string
         $value = number_format ($r->donation , 2);
+        // create payment
         $payment = Mollie::api()->payments->create([
             "amount" => [
                 "currency" => "EUR",

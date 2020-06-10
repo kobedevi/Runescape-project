@@ -57,6 +57,7 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        // overwritten register function to add language to redirect
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
         if ($response = $this->registered($request, $user)) {
@@ -91,9 +92,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // create new user
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            // hash password
             'password' => Hash::make($data['password']),
         ]);
     }

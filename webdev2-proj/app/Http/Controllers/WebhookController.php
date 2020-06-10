@@ -16,6 +16,7 @@ class WebhookController extends Controller
 
         $payment = Mollie::api()->payments()->get($r->id);
 
+        // if donation gets tag "PAID" add it to the database
         if ($payment->isPaid()) {
             $donation = new Donation;
             $donation->public = $payment->metadata->publication;

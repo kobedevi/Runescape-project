@@ -8,7 +8,7 @@ use App\Page;
 class PagesController extends Controller
 {
     public function getIndex($language, $slug=null){
-        // get active where given slug equals dutch or en
+        // get active pages, where given slug equals nl/en slug
 
         $post = Page::where('active', 1)
         ->Where(function($query) use($slug)

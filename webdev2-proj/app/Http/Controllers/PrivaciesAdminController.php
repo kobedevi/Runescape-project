@@ -18,6 +18,7 @@ class PrivaciesAdminController extends Controller
     }
 
     public function save(Request $r) {
+        // user data
         $privacy = new Privacy();
         $privacy->text_en = $r->input('text_en');
         $privacy->text_nl = $r->input('text_nl');
@@ -25,6 +26,7 @@ class PrivaciesAdminController extends Controller
         $privacy = $privacy->toArray();
         $update = Privacy::where('id', 1)->first();
         
+        // update old privacy content
         $update->update($privacy);   
 
         return redirect()->route('privacy.edit', app()->getLocale())->with('succes', trans('alert.edit'));

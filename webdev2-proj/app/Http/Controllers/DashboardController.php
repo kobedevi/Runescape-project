@@ -14,8 +14,4 @@ class DashboardController extends Controller
     public function getIndex(){
         return view('admin.app');
     }
-
-    public function test(){
-        return 'this is something';
-    }
 }

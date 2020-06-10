@@ -11,11 +11,6 @@ class AboutsAdminController extends Controller
     {
         $this->middleware('auth');
     }
-    
-    public function getindex(){
-        $text = About::firstOrFail();
-        return view('about', compact('text'));
-    }
 
     public function edit() {
         $post = About::firstOrFail();
@@ -23,6 +18,7 @@ class AboutsAdminController extends Controller
     }
 
     public function save(Request $r) {
+        // user data
         $about = new About();
         $about->text_en = $r->input('text_en');
         $about->text_nl = $r->input('text_nl');
@@ -30,6 +26,7 @@ class AboutsAdminController extends Controller
         $about = $about->toArray();
         $update = About::where('id', 1)->first();
         
+        // update the old content
         $update->update($about);   
 
         return redirect()->route('about.edit', app()->getLocale())->with('succes', trans('alert.edit'));
