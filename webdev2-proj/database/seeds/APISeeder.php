@@ -13,7 +13,7 @@ class APISeeder extends Seeder
     public function run()
     {
         $newsletter = new Newsletter();
-        $newsletter->key = "09eb082c1ebfbf0c4fa1e67327defe83-us10";
+        $newsletter->key = "APInewsletter here";
         $newsletter->active = "1";
         $newsletter->save();
     }
