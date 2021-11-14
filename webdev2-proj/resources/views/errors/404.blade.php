@@ -17,7 +17,6 @@
 </head>
 <body class="errorContainer">
     <div>
-        {{App::getLocale()}}
         <img src="{{ asset('/images/branding/rs.png') }}">
         <h2>{{ $exception->getStatusCode() }}</h2>
         <h1 class="errorTitle">{{ __('alert.error.title')}}</h1>
